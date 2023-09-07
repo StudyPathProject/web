@@ -41,7 +41,7 @@ export default defineNuxtConfig({
       mobileAppIOS: true
       /* meta options */
     }
-  }
+  },
 
   css: ["@/assets/css/tailwind.css"],
 });
