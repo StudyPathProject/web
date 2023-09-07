@@ -3,5 +3,5 @@
 </script>
 
 <template>
-  <h1>Coming soon...</h1>
+  <h1 class="min-h-[90vh]">Coming soon...</h1>
 </template>
