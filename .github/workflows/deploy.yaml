@@ -19,7 +19,7 @@ jobs:
           node-version: 14
 
       - name: Instalar dependencias
-        run: npm ci
+        run: npm i
 
       - name: Checkeo de dependencias vulnerables
         run: npm audit
