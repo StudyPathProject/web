@@ -39,6 +39,14 @@ export default defineNuxtConfig({
       mobileAppIOS: true,
       /* meta options */
     },
+
+    manifest: {
+      name: "Studypath",
+      lang: "es",
+      description: "Una nueva forma de aprender.",
+      useWebmanifestExtension: false,
+      theme_color: "#26B89B",
+    },
   },
 
   css: ["@/assets/css/tailwind.css"],
