@@ -1,5 +1,7 @@
 # Nuxt 3 Minimal Starter
 
+[![CI](https://github.com/StudyPathProject/web/actions/workflows/ci.yaml/badge.svg)](https://github.com/StudyPathProject/web/actions/workflows/ci.yaml)
+
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
 ## Setup

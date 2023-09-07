@@ -27,5 +27,21 @@ export default defineNuxtConfig({
     },
   },
 
+  buildModules: [
+    '@nuxtjs/pwa',
+  ]
+
+  pwa: {
+    meta: {
+      name: "Studypath",
+      description: "Una nueva forma de aprender.",
+      theme_color: "#26B89B",
+      lang: "es"
+      mobileApp: true,
+      mobileAppIOS: true
+      /* meta options */
+    }
+  }
+
   css: ["@/assets/css/tailwind.css"],
 });

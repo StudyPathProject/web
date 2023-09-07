@@ -10,11 +10,12 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
-    "nuxt": "^3.7.1",
+    "@nuxthq/ui": "^2.7.0",
+    "@nuxtjs/pwa": "^3.3.5",
     "@nuxtjs/tailwindcss": "^6.8.0",
-    "nuxt-headlessui": "^1.1.4",
     "daisyui": "^3.6.5",
-    "@nuxthq/ui": "^2.7.0"
+    "nuxt": "^3.7.1",
+    "nuxt-headlessui": "^1.1.4"
   },
   "dependencies": {
     "@heroicons/vue": "^2.0.18"
