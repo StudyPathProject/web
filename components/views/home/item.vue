@@ -20,7 +20,9 @@ const props = defineProps({
 
 <template>
     <div class="flex flex-row w-fit h-28 items-center gap-4">
-        <img :src="imgSrc">
+        <div class="h-20 w-20">
+            <slot></slot>
+        </div>
         <div class="flex flex-col">
             <h1 class="font-semibold text-3xl">{{ title }}</h1>
             <p class="font-semibold mt-1">{{ subTitle }}</p>

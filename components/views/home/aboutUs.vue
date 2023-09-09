@@ -1,6 +1,6 @@
 <template>
   <section class="mx-auto p-4 text-center mt-10">
-    <h2 class="text-3xl font-semibold mb-7 text-main-3">¿Quienes somos?</h2>
+    <h2 class="text-4xl font-semibold mb-7 text-main-3">¿Quienes somos?</h2>
 
     <div class="flex flex-wrap my-16 mx-auto gap-14 justify-center sm:w-[90%] w-full">
       <div v-for="e in divs" class="bg-main rounded-xl shadow-md p-4 mx-0 w-full sm:max-w-[300px]">
