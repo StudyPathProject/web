@@ -1,15 +1,22 @@
 <script setup lang="ts">
-const props = defineProps({
-  to:{
-    type:String,
+defineProps({
+  to: {
+    type: String,
     required: false,
     default: ""
+  },
+  variant: {
+    type: String,
+    required: false,
+    default: "main"
   }
 })
 </script>
 
 <template>
-  <NuxtLink :to="to" class="flex justify-center items-center cursor-pointer w-32 h-12 bg-[#58BCA8] text-[#3D5B89] hover:bg-[#397B6E] rounded-xl font-bold shadow-lg">
+  <NuxtLink :to="to"
+    class="flex justify-center items-center cursor-pointer w-fit px-5 h-10 rounded-md font-semibold shadow-lg transition-all"
+    :class="variant == 'main' ? 'bg-main text-main hover:bg-main-darker' : 'bg-main-2 text-white hover:bg-main-2-darker'">
     <slot />
   </NuxtLink>
 </template>

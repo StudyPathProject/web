@@ -2,4 +2,5 @@
   <ViewsHomeMainView />
   <ViewsHomeOurVision />
   <ViewsHomeWhatIs />
+  <ViewsHomeAboutUs />
 </template>

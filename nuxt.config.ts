@@ -11,43 +11,43 @@ export default defineNuxtConfig({
     },
   },
 
-  build: {
-    postcss: {
-      postcssOptions: {
-        plugins: {
-          tailwindcss: {},
-          autoprefixer: {},
-        },
-      },
-    },
-    loaders: {
-      vue: {
-        prettify: false,
-      },
-    },
-  },
+  // build: {
+  //   postcss: {
+  //     postcssOptions: {
+  //       plugins: {
+  //         tailwindcss: {},
+  //         autoprefixer: {},
+  //       },
+  //     },
+  //   },
+  //   loaders: {
+  //     vue: {
+  //       prettify: false,
+  //     },
+  //   },
+  // },
 
-  buildModules: ["@nuxtjs/pwa"],
+  // buildModules: ["@nuxtjs/pwa"],
 
-  pwa: {
-    meta: {
-      name: "Studypath",
-      description: "Una nueva forma de aprender.",
-      theme_color: "#26B89B",
-      lang: "es",
-      mobileApp: true,
-      mobileAppIOS: true,
-      /* meta options */
-    },
+  // pwa: {
+  //   meta: {
+  //     name: "Studypath",
+  //     description: "Una nueva forma de aprender.",
+  //     theme_color: "#26B89B",
+  //     lang: "es",
+  //     mobileApp: true,
+  //     mobileAppIOS: true,
+  //     /* meta options */
+  //   },
 
-    manifest: {
-      name: "Studypath",
-      lang: "es",
-      description: "Una nueva forma de aprender.",
-      useWebmanifestExtension: false,
-      theme_color: "#26B89B",
-    },
-  },
+  //   manifest: {
+  //     name: "Studypath",
+  //     lang: "es",
+  //     description: "Una nueva forma de aprender.",
+  //     useWebmanifestExtension: false,
+  //     theme_color: "#26B89B",
+  //   },
+  // },
 
   css: ["@/assets/css/tailwind.css"],
 });
