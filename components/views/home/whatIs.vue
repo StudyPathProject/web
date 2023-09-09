@@ -28,7 +28,7 @@
 
     <img
       src="@/assets/img/whatIs-img.png"
-      class="w-[70%] md:w-[30%] self-end mt-10 md:mt-0 md:translate-y-10"
+      class="w-[60%] md:w-[30%] self-end mt-10 md:mt-0 md:translate-y-10"
     />
   </div>
 </template>

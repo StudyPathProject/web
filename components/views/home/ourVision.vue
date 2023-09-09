@@ -1,16 +1,18 @@
 <template>
   <div
-    class="md:h-screen w-full bg-gradient-to-b from-[#0E3A32] to-black flex flex-col"
+    class="md:h-screen w-full bg-gradient-to-b from-[#0E3A32] to-black flex flex-col -translate-y-1"
   >
     <div
       class="flex-1 flex flex-col md:flex-row justify-between items-center gap-5"
     >
       <img
         src="@/assets/img/ellipse-img.png"
-        class="w-[70%] md:w-[30%] self-start"
+        class="w-[60%] md:w-[30%] self-start md:order-1 order-2 mb-10"
       />
 
-      <div class="flex flex-col mr-5 md:mr-32 mt-10 items-end text-white">
+      <div
+        class="flex flex-col mr-5 md:mr-32 mt-10 items-end text-white order-1 md:order-2"
+      >
         <h1 class="font-bold mb-10 text-4xl text-right text-white">
           Nuestra visión
         </h1>
