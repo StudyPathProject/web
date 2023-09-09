@@ -1,0 +1,14 @@
+# Get curso by ID
+query ($id: ID!) {
+  curso(id: $id) {
+    data {
+      id
+      attributes {
+        name
+        Capitulos {
+          name
+        }
+      }
+    }
+  }
+}
