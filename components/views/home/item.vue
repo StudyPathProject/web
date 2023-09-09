@@ -23,9 +23,10 @@ const props = defineProps({
         <div class="h-20 w-20">
             <slot></slot>
         </div>
+
         <div class="flex flex-col">
-            <h1 class="font-semibold text-3xl">{{ title }}</h1>
-            <p class="font-semibold mt-1">{{ subTitle }}</p>
+            <h1 class="font-semibold text-2xl max-w-lg">{{ title }}</h1>
+            <p class="font-regular mt-1 max-w-lg text-lg">{{ subTitle }}</p>
         </div>
     </div>
 </template>

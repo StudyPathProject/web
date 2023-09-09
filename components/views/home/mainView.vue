@@ -6,14 +6,15 @@
       </div>
     </div>
     <div class="text-center mb-10 z-20">
-      <div class="text-[50px] text-center font-semibold mb-4 drop-shadow-[0_70px_75px_rgba(0,0,0,0.05)]">
-        <p class="text-white">Una nueva herramienta<br>para aprender.</p>
+      <div class="text-6xl text-center font-semibold mb-4 drop-shadow-[0_70px_75px_rgba(0,0,0,0.05)]">
+        <p class="text-white">Una nueva herramienta</p>
+        <p class="text-white mt-2">para aprender.</p>
       </div>
-      <span class="text-md font-light text-white">Cursos de electronica.</span>
+      <span class="text-md font-light text-gray-200 text-xl">Cursos de electronica.</span>
 
       <div class="w-full flex flex-row justify-center gap-10 mt-10">
         <CommonButton variant="main" to="/cursos">Ver cursos</CommonButton>
-        <CommonButton variant="main-2">Mas info.</CommonButton>
+        <CommonButton variant="main-2">Mas info</CommonButton>
       </div>
     </div>
   </div>

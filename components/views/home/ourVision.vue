@@ -1,12 +1,12 @@
 <template>
     <div
         class="flex flex-row justify-between items-center h-screen w-full bg-gradient-to-b from-[#0E3A32] to-black pb-20 gap-5">
-        <img src="@/assets/img/ellipse-img.png" class="h-[90%]">
+        <img src="@/assets/img/ellipse-img.png" class="w-[40%] md:w-[30%]">
 
-        <div class="flex flex-col mr-20 mt-10 items-end text-white">
-            <h1 class="font-bold mb-10 text-6xl text-right text-white">Nuestra visión</h1>
+        <div class="flex flex-col mr-32 mt-10 items-end text-white">
+            <h1 class="font-bold mb-10 text-4xl text-right text-white">Nuestra visión</h1>
 
-            <p class="text-right font-regular leading-8 text-white">En StudyPath, nos apasiona la
+            <p class="text-right font-regular text-lg leading-8 text-white">En StudyPath, nos apasiona la
                 educación
                 <b>inclusiva y equitativa.</b><br>
                 Creemos firmemente en reducir las

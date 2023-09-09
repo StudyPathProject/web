@@ -9,7 +9,7 @@ import { WalletIcon, ClockIcon, AcademicCapIcon, BookOpenIcon } from "@heroicons
       <h1 class="text-main-3 text-4xl font-bold">Una forma innovadora de de estudiar</h1>
     </div>
 
-    <div class="flex flex-wrap m-10 mt-20 justify-evenly">
+    <div class="flex flex-wrap md:flex-nowrap m-10 mt-20 justify-evenly">
       <div class="w-fit px-5">
         <ViewsHomeItem title="Accesible para todos" subTitle="Cursos gratuitos y opciones premium.">
           <WalletIcon />
@@ -20,7 +20,7 @@ import { WalletIcon, ClockIcon, AcademicCapIcon, BookOpenIcon } from "@heroicons
         </ViewsHomeItem>
       </div>
 
-      <div class="w-fit px-5">
+      <div class="w-fit px-5 flex flex-col">
         <ViewsHomeItem title="Aprende a tu ritmo" subTitle="Flexibilidad horaria y acceso ilimitado.">
           <ClockIcon />
         </ViewsHomeItem>
