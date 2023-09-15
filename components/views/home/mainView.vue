@@ -1,17 +1,17 @@
 <template>
   <div
-    class="flex justify-center align-center items-center h-screen w-full bg-gradient-to-b from-[#26B89B] to-[#0E3A32]"
+    class="flex justify-center align-center items-center h-screen min-h-[700px] w-full bg-gradient-to-b from-[#26B89B] to-[#0E3A32]"
   >
     <div
-      class="absolute flex flex-row z-20 h-full w-full pb-20 justify-center items-center overflow-hidden"
+      class="absolute flex flex-row z-20 pb-20 justify-center items-center overflow-hidden max-w-[100%]"
     >
       <img
         src="@/assets/img/home-img.png"
-        class="h-[100%] object-cover md:w-[90%]"
+        class="w-[1000px] max-w-2xl object-fill sm:w-[80%] md:w-[75%] lg:w-[100%]"
       />
 
       <div
-        class="bg-black/10 backdrop-blur-[2px] backdrop-brightness-[1.0] rounded-3xl absolute h-[50%] w-[90%] md:h-[60%] md:w-[60%] z-20"
+        class="bg-black/10 backdrop-blur-[2px] backdrop-brightness-[1.0] rounded-3xl absolute h-[50%] w-[90%] md:h-[60%] md:w-[100 z-20"
       ></div>
     </div>
 

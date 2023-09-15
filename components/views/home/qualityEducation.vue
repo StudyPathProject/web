@@ -8,7 +8,7 @@ import {
 </script>
 
 <template>
-  <div class="flex flex-col justify-between h-fit md:h-screen w-full">
+  <div class="flex flex-col justify-between h-fit md:h-screen min-h-fit w-full">
     <div class="wave top-0 -translate-y-1">
       <svg
         xmlns="http://www.w3.org/2000/svg"

@@ -1,6 +1,6 @@
 <template>
   <div
-    class="md:h-screen w-full bg-gradient-to-b from-[#0E3A32] to-black flex flex-col -translate-y-1"
+    class="md:h-screen min-h-[700px] w-full bg-gradient-to-b from-[#0E3A32] to-black flex flex-col -translate-y-1"
   >
     <div
       class="flex-1 flex flex-col md:flex-row justify-between items-center gap-5"
