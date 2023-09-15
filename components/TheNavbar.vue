@@ -144,15 +144,14 @@
 </template>
 
 <script setup>
-import {
-  Disclosure,
-  DisclosureButton,
-  DisclosurePanel,
-  Menu,
-  MenuButton,
-  MenuItem,
-  MenuItems,
-} from "@headlessui/vue";
+/**
+ * Menu,
+ * MenuButton,
+ * MenuItem,
+ * MenuItems,
+ */
+import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/vue";
+
 import { Bars3Icon, XMarkIcon } from "@heroicons/vue/24/outline";
 
 const iconColor = "#333";
