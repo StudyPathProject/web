@@ -160,13 +160,9 @@ function changeSelectedOption(content: Content, cap: { name: string, content: Co
 <template>
     <ViewsContent class="flex md:flex-row flex-col mb-10 min-h-screen ">
 
-        <div class="md:hidden flex text-main">
-            <ArrowLeftCircleIcon v-if="!showOptions" class="h-10 w-10" v-on:click="showOptions = true" />
-        </div>
-
-        <div class="md:max-w-xl md:w-1/2 w-full min-h-full text-main md:border-r-2 border-gray-600 "
-            :class="showOptions ? 'md:static static' : ' md:flex-col md:flex hidden'">
-            <h2 class="text-3xl text-clip min-h-16 w-full font-semibold text-black mb-10">{{ (curso.attributes.name as
+        <div class="md:max-w-xs md:w-1/2 w-full min-h-full text-main border-r-2 border-gray-600 "
+            :class="showOptions ? 'static' : ' md:flex-col md:flex hidden'">
+            <h2 class="text-3xl text-clip min-h-16 w-full font-semibold text-black mb-4">{{ (curso.attributes.name as
                 string) }} </h2>
             <Disclosure as="div" v-for="capitulo in curso.capitulos" class="m-2 text-xl" v-slot="{ open }">
                 <DisclosureButton class="flex flex-col w-full justify-between text-left font-medium p-2">
@@ -195,10 +191,20 @@ function changeSelectedOption(content: Content, cap: { name: string, content: Co
         </div>
 
 
-        <div class="text-left w-full ml-3" :class="showOptions ? 'md:static hidden' : 'md:static static'">
-            <h1 class="font-bold mb-5 mt-5">{{ selectedOption.title }}</h1>
+        <div class="text-left w-full ml-3" :class="showOptions ? 'md:static hidden' : 'static'">
 
-            <p class="font-normal text-xl font-serif text-justify">{{ selectedOption.description }}</p>
+            <div v-if="!showOptions" class="md:hidden flex flex-row w-full text-main items-center">
+                <ArrowLeftCircleIcon class="h-10 w-10" v-on:click="showOptions = true" />
+                <h1 class="font-bold">{{ selectedOption.title }}</h1>
+            </div>
+            <p class="md:hidden font-normal text-xl font-serif text-justify ml-5 mt-10">{{ selectedOption.description }}</p>
+
+            <div class="flex flex-col mt-10 ml-5">
+                <h1 class="font-bold">{{ selectedOption.title }}</h1>
+
+                <p class="font-normal text-xl font-serif text-justify ml-5 mt-10">{{ selectedOption.description }}</p>
+            </div>
         </div>
 
-</ViewsContent></template>
+    </ViewsContent>
+</template>
