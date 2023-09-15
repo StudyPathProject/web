@@ -1,7 +1,7 @@
 <template>
-  <ViewsHomeMainView />
-  <ViewsHomeOurVision />
-  <ViewsHomeWhatIs />
-  <ViewsHomeQualityEducation />
-  <ViewsHomeAboutUs />
+    <ViewsHomeMainView />
+    <ViewsHomeOurVision />
+    <ViewsHomeWhatIs />
+    <ViewsHomeQualityEducation />
+    <ViewsHomeAboutUs />
 </template>
