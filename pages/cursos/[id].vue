@@ -158,9 +158,9 @@ function changeSelectedOption(content: Content, cap: { name: string, content: Co
 </script>
 
 <template>
-    <ViewsContent class="flex flex-row mb-10 min-h-screen ">
+    <ViewsContent class="flex md:flex-row flex-col mb-10 min-h-screen ">
 
-        <div class="md:hidden flex flex-row text-main">
+        <div class="md:hidden flex text-main">
             <ArrowLeftCircleIcon v-if="!showOptions" class="h-10 w-10" v-on:click="showOptions = true" />
         </div>
 
@@ -195,7 +195,7 @@ function changeSelectedOption(content: Content, cap: { name: string, content: Co
         </div>
 
 
-        <div class="text-left w-full ml-10" :class="showOptions ? 'md:static hidden' : 'md:static static'">
+        <div class="text-left w-full ml-3" :class="showOptions ? 'md:static hidden' : 'md:static static'">
             <h1 class="font-bold mb-5 mt-5">{{ selectedOption.title }}</h1>
 
             <p class="font-normal text-xl font-serif text-justify">{{ selectedOption.description }}</p>
