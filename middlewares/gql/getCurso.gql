@@ -1,0 +1,11 @@
+# Get curso by ID
+query {
+  curso(id: 1) {
+    data {
+      id
+      attributes {
+        name
+      }
+    }
+  }
+}
