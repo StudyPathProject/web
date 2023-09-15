@@ -24,8 +24,6 @@ const graphQLClient = () => {
 };
 
 export async function getCursos(): Promise<CursosResponse> {
-  const env = useRuntimeConfig();
-
   const query = gql`
     # Get all cursos
     query {
@@ -35,7 +33,6 @@ export async function getCursos(): Promise<CursosResponse> {
           attributes {
             name
             description
-            public
           }
         }
         meta {

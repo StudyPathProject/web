@@ -3,7 +3,7 @@ export type Curso = {
   attributes: {
     name: string;
     description: string;
-    public: boolean;
+    banner?: string;
   };
 };
 

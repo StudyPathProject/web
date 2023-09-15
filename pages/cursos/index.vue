@@ -1,30 +1,40 @@
 <script lang="ts" setup>
-import { getCursos } from '@/middlewares/dao';
+import { getCursos } from "@/middlewares/dao";
 
-const data = await getCursos()
-
-console.log(data)
-const cursos = data.cursos.data
-const page = data.cursos.meta.pagination.page
+const data = reactive({
+  cursos: await getCursos(),
+  page: 1,
+});
 </script>
 
 <template>
   <ViewsContent>
-    <CommonPageTitle>
-      Nuestros cursos
-    </CommonPageTitle>
+    <CommonPageTitle> Nuestros cursos </CommonPageTitle>
 
     <div class="w-full border-b border-gray-300 py-3 mt-6">
       <p>Filtros</p>
     </div>
 
-    <div class="min-h-[50vh] w-full flex flex-wrap gap-4 mb-14 justify-evenly">
-      <CursoCard v-for="c in cursos" :curso="c" :key="c.id" />
+    <div v-if="data.cursos && data.page">
+      <div
+        class="min-h-[50vh] w-full flex flex-wrap gap-4 mb-14 justify-evenly"
+      >
+        <CursoCard
+          v-for="c in data.cursos.cursos.data"
+          :curso="c"
+          :key="c.id"
+        />
+      </div>
+
+      <UPagination
+        v-if="data.cursos.cursos.data && data.cursos.cursos.data.length >= 20"
+        :model-value="data.page || 1"
+        class="mx-auto mb-10"
+        size="md"
+        :page-count="data.page"
+        :total="data.cursos.cursos.data.length"
+        :inactive-button="{ color: 'white' }"
+      />
     </div>
-
-    <UPagination v-if="cursos && cursos.length >= 20" :model-value="page || 1" class="mx-auto mb-10" size="md"
-      :page-count="page" :total="cursos.length" :inactive-button="{ color: 'white' }" />
-
-    <!-- <CommonPagination class="w-full" /> -->
   </ViewsContent>
 </template>

@@ -1,5 +1,5 @@
 <script lang="ts">
-import { Curso } from '~/types/cursos';
+import { Curso } from "~/types/cursos";
 // const cursos = [
 //   {
 //     id: "das87-d8asdas-d89as-d0as",
@@ -10,31 +10,42 @@ import { Curso } from '~/types/cursos';
 //   },
 // ]
 export default {
-    props: {
-        curso: {
-            type: Object as () => Curso,
-            required: true
-        }
-    }
-}
+  props: {
+    curso: {
+      type: Object as () => Curso,
+      required: true,
+    },
+  },
+};
 </script>
 
 <template>
-    <div class="card flex-1 min-w-[250px] h-fit bg-gray-200 px-0 mix-h-42 shadow-x mt-10 max-w-[380px]">
-        <figure class="max-h-[150px] object-cover w-full px-0">
-            <img src="~/assets/img/curso-ejemplo.png" class="h-full w-full" alt="Curso" />
-        </figure>
+  <div
+    class="card flex-1 min-w-[250px] h-fit bg-gray-200 px-0 mix-h-42 shadow-x mt-10 max-w-[380px]"
+  >
+    <figure class="max-h-[150px] object-cover w-full px-0">
+      <img
+        :src="curso.attributes?.banner ?? '/_nuxt/assets/img/curso-ejemplo.png'"
+        class="h-full w-full"
+        alt="Curso"
+      />
+    </figure>
 
-        <div class="card-body">
-            <h2 class="card-title">{{ curso.attributes.name }}</h2>
-            <p>{{ curso.attributes.description }}</p>
-            <div class="card-actions justify-end">
-                <NuxtLink :to="'/cursos/'">
-                    <!-- + curso.id -->
-                    <button class="btn btn-primary bg-main border-none text-main hover:bg-main-mute">Ver
-                        mas</button>
-                </NuxtLink>
-            </div>
-        </div>
+    <div class="card-body">
+      <h2 class="card-title">{{ curso.attributes.name }}</h2>
+      <p class="truncate">
+        {{ curso.attributes.description }}
+      </p>
+      <div class="card-actions justify-end">
+        <NuxtLink :to="'/cursos/'">
+          <!-- + curso.id -->
+          <button
+            class="btn btn-primary bg-main border-none text-main hover:bg-main-mute"
+          >
+            Ver mas
+          </button>
+        </NuxtLink>
+      </div>
     </div>
+  </div>
 </template>

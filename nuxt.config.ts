@@ -5,9 +5,8 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     app: {
-      API_TOKEN:
-        "Bearer b015996d675dab1f6fe2fd69a8edc7db614b8e455aa3cfe81225634f0f167f39a5e946ee021ff452ba609c9cc36e896afd31ed00aa3a7b488d7a718149f3490fcd2a3daae0d2351537c41de617c8486752fe455196d66640550642ce40e07ecea35b29be9b001a69dd982032bf8dd6fe6225e0ce44a2c767de16729a3024da93",
-      API_ENDPOINT: "http://localhost:1337/graphql",
+      API_TOKEN: process.env.API_TOKEN!, //   "Bearer b015996d675dab1",
+      API_ENDPOINT: process.env.API_ENDPOINT!, // "http://localhost:1337/graphql",
     },
   },
 
@@ -75,7 +74,7 @@ export default defineNuxtConfig({
   //       options: {
   //         headers: {
   //           authorization:
-  //             "Bearer b015996d675dab1f6fe2fd69a8edc7db614b8e455aa3cfe81225634f0f167f39a5e946ee021ff452ba609c9cc36e896afd31ed00aa3a7b488d7a718149f3490fcd2a3daae0d2351537c41de617c8486752fe455196d66640550642ce40e07ecea35b29be9b001a69dd982032bf8dd6fe6225e0ce44a2c767de16729a3024da93",
+  //             "Bearer b015996d675dab1",
   //         },
   //       },
   //     },
