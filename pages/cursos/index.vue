@@ -1,26 +1,39 @@
 <script lang="ts" setup>
-
+export type Curso = {
+    id: string;
+    attributes: {
+      name: string;
+      description: string;
+      public: boolean;
+    };
+  };
 const cursos = [
   {
     id: "das87-d8asdas-d89as-d0as",
-    title: "Introducción a la Electrónica",
-    desc: "Curso basico de electrónica con arduino y programación en C++",
-    chapters: 5,
-    duration: 120,
+    attributes:{
+      name: "Introducción a la Electrónica",
+      description: "Curso basico de electrónica con arduino y programación en C++",
+      chapters: 5,
+      duration: 120,
+    }
   },
   {
     id: "das87-d8asdas-d89as-d0as",
-    title: "Introducción a la Electrónica",
-    desc: "Curso basico de electrónica con arduino y programación en C++",
-    chapters: 5,
-    duration: 120
+    attributes:{
+      name: "Introducción a la Electrónica",
+      description: "Curso basico de electrónica con arduino y programación en C++",
+      chapters: 5,
+      duration: 120,
+    }
   },
   {
     id: "das87-d8asdas-d89as-d0as",
-    title: "Introducción a la Electrónica",
-    desc: "Curso basico de electrónica con arduino y programación en C++",
-    chapters: 5,
-    duration: 120
+    attributes:{
+      name: "Introducción a la Electrónica",
+      description: "Curso basico de electrónica con arduino y programación en C++",
+      chapters: 5,
+      duration: 120,
+    }
   }
 ]
 

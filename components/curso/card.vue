@@ -21,7 +21,7 @@ export default {
             <h2 class="card-title">{{ curso.attributes.name }}</h2>
             <p>{{ curso.attributes.description }}</p>
             <div class="card-actions justify-end">
-                <NuxtLink :to="'/cursos/'" :curso="curso">
+                <NuxtLink :to="'/curso/'" :curso="curso">
                     <!-- + curso.id -->
                     <button class="btn btn-primary">Ver mas</button>
                 </NuxtLink>
