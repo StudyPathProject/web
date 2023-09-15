@@ -27,7 +27,7 @@
     @apply text-[#3D5B89];
   }
   .text-main-2 {
-    @apply bg-[#26B89B];
+    @apply text-[#26B89B];
   }
   .text-main-3 {
     @apply text-[#2E4B45];
