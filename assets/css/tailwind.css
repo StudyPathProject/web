@@ -8,25 +8,50 @@
   }
 
   h1 {
-    @apply text-gray-900 text-4xl
+    @apply text-gray-900 text-4xl;
   }
-  h2, h3, h4, h5 {
-    @apply text-gray-800
+  h2,
+  h3,
+  h4,
+  h5 {
+    @apply text-gray-800;
   }
   p {
-    @apply text-gray-700
+    @apply text-gray-700;
   }
 }
 
 @layer components {
   /* ? Text colors */
-  .text-main { @apply text-[#3D5B89] }
+  .text-main {
+    @apply text-[#3D5B89];
+  }
+  .text-main-2 {
+    @apply bg-[#26B89B];
+  }
+  .text-main-3 {
+    @apply text-[#2E4B45];
+  }
 
   /* ? Backgrounds */
-  .bg-main { @apply bg-[#26B89B] }
-  .bg-main-mute { @apply bg-[#3beac7b3] }
-  .bg-main-2 { @apply bg-[#3D5B89] }
+  .bg-main {
+    @apply bg-[#26B89B];
+  }
+  .bg-main-darker {
+    @apply bg-[#23a188];
+  }
+  .bg-main-mute {
+    @apply bg-[#3beac7b3];
+  }
+  .bg-main-2 {
+    @apply bg-[#3D5B89];
+  }
+  .bg-main-2-darker {
+    @apply bg-[#324a6f];
+  }
 
   /* ? Border */
-  .border-main-mute { @apply border-[#3beac7b3] }
+  .border-main-mute {
+    @apply border-[#3beac7b3];
+  }
 }
