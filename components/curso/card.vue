@@ -16,6 +16,18 @@ export default {
       required: true,
     },
   },
+
+  methods: {
+    getImg(x: string | unknown): string | null {
+      if (typeof x != "string") return null;
+      const env = useRuntimeConfig();
+      const route =
+        (env.app.API_UPLOADS! as string)?.replace("/graphql", "") +
+        x.replace("/uploads", "");
+      console.log("ACA", route);
+      return route;
+    },
+  },
 };
 </script>
 
@@ -25,7 +37,11 @@ export default {
   >
     <figure class="max-h-[150px] object-cover w-full px-0">
       <img
-        :src="curso.attributes?.banner ?? '/_nuxt/assets/img/curso-ejemplo.png'"
+        :src="
+          getImg(
+            curso.attributes?.banner?.data?.attributes?.formats?.thumbnail?.url
+          ) ?? '/dist/assets/img/curso-ejemplo.png'
+        "
         class="h-full w-full"
         alt="Curso"
       />

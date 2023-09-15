@@ -33,6 +33,16 @@ export async function getCursos(): Promise<CursosResponse> {
           attributes {
             name
             description
+            banner {
+              data {
+                attributes {
+                  alternativeText
+                  caption
+                  name
+                  formats
+                }
+              }
+            }
           }
         }
         meta {
@@ -48,5 +58,6 @@ export async function getCursos(): Promise<CursosResponse> {
   `;
 
   const data = (await graphQLClient().request(query)) as CursosResponse;
+  console.log(data);
   return data;
 }
