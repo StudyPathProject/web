@@ -7,11 +7,11 @@
     >
       <img
         src="@/assets/img/home-img.png"
-        class="w-[1000px] max-w-2xl object-fill sm:w-[80%] md:w-[75%] lg:w-[100%]"
+        class="w-[1000px] max-w-2xl sm:mt-0 mt-10 md:-mt-0 object-fill sm:w-[80%] md:w-[75%] lg:w-[100%]"
       />
 
       <div
-        class="bg-black/10 backdrop-blur-[2px] backdrop-brightness-[1.0] rounded-3xl absolute h-[50%] w-[90%] md:h-[60%] md:w-[100 z-20"
+        class="bg-black/10 backdrop-blur-[2px] backdrop-brightness-[1.0] rounded-3xl absolute h-[50%] w-[90%] md:h-[60%] md:w-[100%] z-20"
       ></div>
     </div>
 
