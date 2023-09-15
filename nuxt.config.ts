@@ -1,8 +1,14 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: ["@nuxthq/ui", "nuxt-headlessui", "@nuxtjs/tailwindcss"],
-
   devtools: { enabled: true },
+
+  runtimeConfig: {
+    app: {
+      API_TOKEN: process.env.API_TOKEN!, //   "Bearer b015996d675dab1",
+      API_ENDPOINT: process.env.API_ENDPOINT!, // "http://localhost:1337/graphql",
+    },
+  },
 
   app: {
     head: {
@@ -10,44 +16,4 @@ export default defineNuxtConfig({
       meta: [{ name: "description", content: "Una nueva forma de aprender" }],
     },
   },
-
-  // build: {
-  //   postcss: {
-  //     postcssOptions: {
-  //       plugins: {
-  //         tailwindcss: {},
-  //         autoprefixer: {},
-  //       },
-  //     },
-  //   },
-  //   loaders: {
-  //     vue: {
-  //       prettify: false,
-  //     },
-  //   },
-  // },
-
-  // buildModules: ["@nuxtjs/pwa"],
-
-  // pwa: {
-  //   meta: {
-  //     name: "Studypath",
-  //     description: "Una nueva forma de aprender.",
-  //     theme_color: "#26B89B",
-  //     lang: "es",
-  //     mobileApp: true,
-  //     mobileAppIOS: true,
-  //     /* meta options */
-  //   },
-
-  //   manifest: {
-  //     name: "Studypath",
-  //     lang: "es",
-  //     description: "Una nueva forma de aprender.",
-  //     useWebmanifestExtension: false,
-  //     theme_color: "#26B89B",
-  //   },
-  // },
-
-  css: ["@/assets/css/tailwind.css"],
 });

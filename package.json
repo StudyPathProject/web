@@ -4,21 +4,26 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
-    "dev:host": "nuxt dev --host",
+    "dev:host": "nuxt dev --host 0.0.0.0",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "typecheck": "nuxi typecheck"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
     "@nuxthq/ui": "^2.7.0",
     "@nuxtjs/pwa": "^3.3.5",
     "@nuxtjs/tailwindcss": "^6.8.0",
+    "@types/graphql": "^14.5.0",
     "daisyui": "^3.6.5",
+    "graphql": "^16.8.0",
     "nuxt": "^3.7.1",
+    "nuxt-graphql-request": "^6.0.3",
     "nuxt-headlessui": "^1.1.4"
   },
   "dependencies": {
-    "@heroicons/vue": "^2.0.18"
+    "@heroicons/vue": "^2.0.18",
+    "graphql-request": "^6.1.0"
   }
 }
