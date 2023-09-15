@@ -1,40 +1,36 @@
 <script lang="ts" setup>
-export type Curso = {
-    id: string;
-    attributes: {
-      name: string;
-      description: string;
-      public: boolean;
-    };
-  };
-const cursos = [
-  {
-    id: "das87-d8asdas-d89as-d0as",
-    attributes:{
-      name: "Introducción a la Electrónica",
-      description: "Curso basico de electrónica con arduino y programación en C++",
-      chapters: 5,
-      duration: 120,
-    }
+const cursos = [{
+  id: 12,
+  attributes: {
+      name: "Conociendo la electronica",
+      description: "Sarasa Sarasa Sarasa",
+      public: true,
   },
-  {
-    id: "das87-d8asdas-d89as-d0as",
-    attributes:{
-      name: "Introducción a la Electrónica",
-      description: "Curso basico de electrónica con arduino y programación en C++",
-      chapters: 5,
-      duration: 120,
-    }
+},
+{
+  id: 13,
+  attributes: {
+      name: "Conociendo la electronica",
+      description: "Sarasa Sarasa Sarasa",
+      public: true,
   },
-  {
-    id: "das87-d8asdas-d89as-d0as",
-    attributes:{
-      name: "Introducción a la Electrónica",
-      description: "Curso basico de electrónica con arduino y programación en C++",
-      chapters: 5,
-      duration: 120,
-    }
-  }
+},
+{
+  id: 14,
+  attributes: {
+      name: "Conociendo la electronica",
+      description: "Sarasa Sarasa Sarasa",
+      public: true,
+  },
+},
+{
+  id: 15,
+  attributes: {
+      name: "Conociendo la electronica",
+      description: "Sarasa Sarasa Sarasa",
+      public: true,
+  },
+},
 ]
 
 const page = ref(1)

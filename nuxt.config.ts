@@ -3,7 +3,6 @@ export default defineNuxtConfig({
   modules: ["@nuxthq/ui", "nuxt-headlessui", "@nuxtjs/tailwindcss"],
 
   devtools: { enabled: true },
-
   app: {
     head: {
       title: "Studypath",
