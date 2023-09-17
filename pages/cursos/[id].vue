@@ -161,15 +161,14 @@ function changeSelectedOption(content: Content, cap: { name: string, content: Co
 </script>
 
 <template>
-    <div class="flex md:flex-row flex-col mb-10 min-h-screen mx-5 mt-10">
+    <div class="flex md:flex-row flex-col mb-10 min-h-screen md:mx-10 mx-5 mt-10">
 
-        <div class="md:max-w-xs md:w-1/2 w-full md:min-h-full text-left min-h-screen text-main md:border-r-2 border-r-0 border-gray-300 "
+        <div class="md:max-w-sm w-full md:min-h-full text-left min-h-screen text-main md:border-r-2 border-r-0 border-gray-300 "
             :class="showOptions ? 'static' : ' md:flex-col md:flex hidden'">
             
-            <h2 class="text-3xl text-clip min-h-16 w-full font-semibold text-black mb-4">{{ (curso.attributes.name as
-                string) }} </h2>
+            <h2 class="text-3xl min-h-16 w-full font-semibold text-black mb-4">{{ curso.attributes.name }} </h2>
 
-            <Disclosure as="div" v-for="capitulo in curso.capitulos" class="m-2 text-2xl" v-slot="{ open }">
+            <Disclosure as="div" v-for="capitulo in curso.capitulos" class="md:text-xl text-2xl md:mr-5" v-slot="{ open }">
                 
                 <DisclosureButton class="flex flex-col w-full justify-between text-left font-medium p-2">
                     <span>{{ capitulo.name }}</span>
@@ -183,9 +182,9 @@ function changeSelectedOption(content: Content, cap: { name: string, content: Co
                     leave-to="opacity-0">
                     
                     <DisclosurePanel>
-                        <ul class="cursor-pointer pl-4 text-sm font-bold text-gray-600">
+                        <ul class="cursor-pointer flex flex-col gap-2 my-2 ml-5 pl-4 md:text-base text-lg font-bold text-gray-600">
                             <li v-for="content in capitulo.content" v-on:click="changeSelectedOption(content, capitulo)"
-                                class="flex items-center my-2"
+                                class="flex items-center py-3"
                                 :class="content.title == selectedOption.title ? 'bg-main-2 text-white rounded-xl px-4 shadow-xl transition-colors duration-300 ease-in-out' : ''">
                                 <PlusCircleIcon v-if="content.title != selectedOption.title"
                                     class="min-h-5 h-7 min-w-6 mr-4" />
@@ -205,7 +204,7 @@ function changeSelectedOption(content: Content, cap: { name: string, content: Co
 
             <div v-if="!showOptions" class="flex flex-row gap-4 w-full text-main items-center justify-center">
                 <ArrowLeftCircleIcon class="md:hidden h-10 w-10" v-on:click="showOptions = true" />
-                <h1 class="font-bold">{{ selectedOption.title }}</h1>
+                <h1 class="font-bold text-4xl">{{ selectedOption.title }}</h1>
             </div>
             
             <div class="flex flex-col w-full mt-10 mb-10 justify-center items-center gap-10">
