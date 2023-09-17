@@ -165,18 +165,23 @@ function changeSelectedOption(content: Content, cap: { name: string, content: Co
 
         <div class="md:max-w-xs md:w-1/2 w-full md:min-h-full text-left min-h-screen text-main md:border-r-2 border-r-0 border-gray-300 "
             :class="showOptions ? 'static' : ' md:flex-col md:flex hidden'">
+            
             <h2 class="text-3xl text-clip min-h-16 w-full font-semibold text-black mb-4">{{ (curso.attributes.name as
                 string) }} </h2>
-            <Disclosure as="div" v-for="capitulo in curso.capitulos" class="m-2 text-xl" v-slot="{ open }">
+
+            <Disclosure as="div" v-for="capitulo in curso.capitulos" class="m-2 text-2xl" v-slot="{ open }">
+                
                 <DisclosureButton class="flex flex-col w-full justify-between text-left font-medium p-2">
                     <span>{{ capitulo.name }}</span>
                     <div class="transition-opacity duration-700 ease-in"
                         :class="open ? 'h-1 w-10 bg-main-2-darker shadow-xl rounded-xl mr-5 opacity-100' : 'opacity-0'">
                     </div>
                 </DisclosureButton>
+                
                 <TransitionRoot :show="open" enter="transition-opacity duration-700" enter-from="opacity-0"
                     enter-to="opacity-100" leave="transition-opacity duration-300" leave-from="opacity-100"
                     leave-to="opacity-0">
+                    
                     <DisclosurePanel>
                         <ul class="cursor-pointer pl-4 text-sm font-bold text-gray-600">
                             <li v-for="content in capitulo.content" v-on:click="changeSelectedOption(content, capitulo)"
@@ -189,26 +194,29 @@ function changeSelectedOption(content: Content, cap: { name: string, content: Co
                             </li>
                         </ul>
                     </DisclosurePanel>
+                
                 </TransitionRoot>
+
             </Disclosure>
         </div>
 
 
-        <div class="text-left md:w-full w-screen " :class="showOptions ? 'md:static hidden' : 'static'">
+        <div class="text-left md:w-full w-screen md:mx-10 -mx-5" :class="showOptions ? 'md:static hidden' : 'static'">
 
             <div v-if="!showOptions" class="flex flex-row gap-4 w-full text-main items-center justify-center">
                 <ArrowLeftCircleIcon class="md:hidden h-10 w-10" v-on:click="showOptions = true" />
                 <h1 class="font-bold">{{ selectedOption.title }}</h1>
             </div>
             
-            <div class="flex flex-col mt-10 mx-10 mb-10 justify-center gap-10">
+            <div class="flex flex-col w-full mt-10 mb-10 justify-center items-center gap-10">
+                
                 <p v-if="selectedOption?.description != undefined"
-                    class="font-normal leading-relaxed text-xl text-left ">{{ selectedOption.description }}</p>
+                    class="font-normal leading-relaxed text-xl md:w-full text-left mx-5">{{ selectedOption.description }}</p>
 
                 <img v-if="selectedOption?.img != undefined"
-                    class="h-full w-full rounded-xl shadow-xl" :src="selectedOption.img" />
+                    class="h-full aspect-auto md:w-5/6 w-full rounded-xl shadow-xl" :src="selectedOption.img" />
 
-                <video v-if="selectedOption?.video != undefined" class="w-full h-full rounded-xl shadow-xl"
+                <video v-if="selectedOption?.video != undefined" class="w-full h-full md:w-5/6 aspect-video rounded-xl shadow-xl"
                     width="1280" height="720" :src="selectedOption.video" :controls="true">
                 </video>
             </div>
