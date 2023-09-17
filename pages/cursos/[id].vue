@@ -24,25 +24,27 @@ const cursos: Cursos = [{
                 {
                     title: "1 Electronica vasica", description: `Lorem ipsum dolor sit amet. Est soluta autem vel iste provident est galisum magnam aut dolorum delectus non totam illo! Et repellendus optio aut reprehenderit voluptas qui ullam voluptas et vitae consequuntur et quae culpa et sequi ullam. Sit optio rerum a fuga corporis At perferendis enim et obcaecati voluptatem et doloremque aspernatur. At debitis natus qui mollitia obcaecati quo sunt expedita ut totam possimus ab maiores provident sed dicta reiciendis.
 Qui architecto incidunt aut voluptatem quidem et minima porro ut perspiciatis enim hic quaerat officia. Qui mollitia dolore eum sint quos cum nesciunt internos At tempora autem est debitis vero in assumenda dolorem aut sunt cumque?
-Est iste tenetur sed saepe ipsam est ratione omnis. Hic voluptates nobis qui earum doloribus ut tempora voluptatem sed itaque vero ut officia accusantium qui dolorum consequuntur. Ut ullam reiciendis vel nulla labore et delectus repellat aut suscipit molestias est laborum quis vel quaerat iste?`, img: "hola.png"
+Est iste tenetur sed saepe ipsam est ratione omnis. Hic voluptates nobis qui earum doloribus ut tempora voluptatem sed itaque vero ut officia accusantium qui dolorum consequuntur. Ut ullam reiciendis vel nulla labore et delectus repellat aut suscipit molestias est laborum quis vel quaerat iste?`,
+                    img: "https://blogs.iadb.org/conocimiento-abierto/wp-content/uploads/sites/10/2018/06/software-libre-codigo-abierto-1.jpg",
+                    video: "https://www.youtube.com/watch?v=QEk8a_sVDlw"
                 },
-                { title: "1.2 Electronica vasica", description: "", img: "hola.png" }
+                { title: "1.2 Electronica vasica", description: "", video: "https://www.youtube.com/watch?v=QEk8a_sVDlw" }
             ]
         },
         {
             name: "2. Introducción",
             content: [
-                { title: "2 Electronica vasica", description: "", img: "hola.png" },
-                { title: "2.2 Electronica vasica", description: "asdasdadas", img: "hola.png" }
+                { title: "2 Electronica vasica", description: "" },
+                { title: "2.2 Electronica vasica", description: "asdasdadas" }
             ]
         },
         {
             name: "3. Introducción",
-            content: [{ title: "3Electronica vasica", description: "", img: "hola.png" }]
+            content: [{ title: "3Electronica vasica", description: "" }]
         },
         {
             name: "4. Introducción",
-            content: [{ title: "4Electronica vasica", description: "asdasdasds", img: "hola.png", video: "video.mp4" }]
+            content: [{ title: "4Electronica vasica", description: "asdasdasds", video: "video.mp4" }]
         },
     ]
 },
@@ -57,24 +59,24 @@ Est iste tenetur sed saepe ipsam est ratione omnis. Hic voluptates nobis qui ear
         {
             name: "1. Introducción",
             content: [
-                { title: "1 Electronica vasica", description: "asdasdasdasdas", img: "hola.png" },
-                { title: "1.2 Electronica vasica", description: "", img: "hola.png" }
+                { title: "1 Electronica vasica", description: "asdasdasdasdas" },
+                { title: "1.2 Electronica vasica", description: "" }
             ]
         },
         {
             name: "2. Introducción",
             content: [
-                { title: "2 Electronica vasica", description: "", img: "hola.png" },
-                { title: "2.2 Electronica vasica", description: "asdasdadas", img: "hola.png" }
+                { title: "2 Electronica vasica", description: "" },
+                { title: "2.2 Electronica vasica", description: "asdasdadas" }
             ]
         },
         {
             name: "3. Introducción",
-            content: [{ title: "3Electronica vasica", description: "", img: "hola.png" }]
+            content: [{ title: "3Electronica vasica", description: "" }]
         },
         {
             name: "4. Introducción",
-            content: [{ title: "4Electronica vasica", description: "asdasdasds", img: "hola.png", video: "video.mp4" }]
+            content: [{ title: "4Electronica vasica", description: "asdasdasds", video: "video.mp4" }]
         },
     ]
 },
@@ -89,24 +91,24 @@ Est iste tenetur sed saepe ipsam est ratione omnis. Hic voluptates nobis qui ear
         {
             name: "1. Introducción",
             content: [
-                { title: "1 Electronica vasica", description: "asdasdasdasdas", img: "hola.png" },
-                { title: "1.2 Electronica vasica", description: "", img: "hola.png" }
+                { title: "1 Electronica vasica", description: "asdasdasdasdas" },
+                { title: "1.2 Electronica vasica", description: "", img: "https://blogs.iadb.org/conocimiento-abierto/wp-content/uploads/sites/10/2018/06/software-libre-codigo-abierto-1.jpg" }
             ]
         },
         {
             name: "2. Introducción",
             content: [
-                { title: "2 Electronica vasica", description: "", img: "hola.png" },
-                { title: "2.2 Electronica vasica", description: "asdasdadas", img: "hola.png" }
+                { title: "2 Electronica vasica", description: "" },
+                { title: "2.2 Electronica vasica", description: "asdasdadas" }
             ]
         },
         {
             name: "3. Introducción",
-            content: [{ title: "3Electronica vasica", description: "", img: "hola.png" }]
+            content: [{ title: "3Electronica vasica", description: "" }]
         },
         {
             name: "4. Introducción",
-            content: [{ title: "4Electronica vasica", description: "asdasdasds", img: "hola.png", video: "video.mp4" }]
+            content: [{ title: "4Electronica vasica", description: "asdasdasds", video: "video.mp4" }]
         },
     ]
 },
@@ -121,24 +123,24 @@ Est iste tenetur sed saepe ipsam est ratione omnis. Hic voluptates nobis qui ear
         {
             name: "1. Introducción",
             content: [
-                { title: "1 Electronica vasica", description: "asdasdasdasdas", img: "hola.png" },
-                { title: "1.2 Electronica vasica", description: "", img: "hola.png" }
+                { title: "1 Electronica vasica", description: "asdasdasdasdas" },
+                { title: "1.2 Electronica vasica", description: "" }
             ]
         },
         {
             name: "2. Introducción",
             content: [
-                { title: "2 Electronica vasica", description: "", img: "hola.png" },
-                { title: "2.2 Electronica vasica", description: "asdasdadas", img: "hola.png" }
+                { title: "2 Electronica vasica", description: "" },
+                { title: "2.2 Electronica vasica", description: "asdasdadas" }
             ]
         },
         {
             name: "3. Introducción",
-            content: [{ title: "3Electronica vasica", description: "", img: "hola.png" }]
+            content: [{ title: "3Electronica vasica", description: "" }]
         },
         {
             name: "4. Introducción",
-            content: [{ title: "4Electronica vasica", description: "asdasdasds", img: "hola.png", video: "video.mp4" }]
+            content: [{ title: "4Electronica vasica", description: "asdasdasds", video: "video.mp4" }]
         },
     ]
 },
@@ -146,11 +148,12 @@ Est iste tenetur sed saepe ipsam est ratione omnis. Hic voluptates nobis qui ear
 
 const { id } = useRoute().params
 const curso: Curso = cursos.find((e: Curso) => e.id.toString() == id)
-let selectedOption: Ref<Content> = ref(cursos[0].capitulos[0].content)
-let selectedCap: Ref<{ name: string, content: Content }> = ref(cursos[0].capitulos[0])
+
+let selectedOption: Ref<Content> = ref(cursos[0].capitulos[0].content[0])
+let selectedCap: Ref<{ name: string, content: Content[] }> = ref(cursos[0].capitulos[0])
 let showOptions: Ref<boolean> = ref(true)
 
-function changeSelectedOption(content: Content, cap: { name: string, content: Content }) {
+function changeSelectedOption(content: Content, cap: { name: string, content: Content[] }) {
     selectedOption.value = content
     selectedCap.value = cap
     showOptions.value = false
@@ -158,9 +161,9 @@ function changeSelectedOption(content: Content, cap: { name: string, content: Co
 </script>
 
 <template>
-    <ViewsContent class="flex md:flex-row flex-col mb-10 min-h-screen ">
+    <div class="flex md:flex-row flex-col mb-10 min-h-screen mx-5 mt-10">
 
-        <div class="md:max-w-xs md:w-1/2 w-full min-h-full text-main border-r-2 border-gray-600 "
+        <div class="md:max-w-xs md:w-1/2 w-full md:min-h-full text-left min-h-screen text-main md:border-r-2 border-r-0 border-gray-300 "
             :class="showOptions ? 'static' : ' md:flex-col md:flex hidden'">
             <h2 class="text-3xl text-clip min-h-16 w-full font-semibold text-black mb-4">{{ (curso.attributes.name as
                 string) }} </h2>
@@ -191,20 +194,25 @@ function changeSelectedOption(content: Content, cap: { name: string, content: Co
         </div>
 
 
-        <div class="text-left w-full ml-3" :class="showOptions ? 'md:static hidden' : 'static'">
+        <div class="text-left md:w-full w-screen " :class="showOptions ? 'md:static hidden' : 'static'">
 
-            <div v-if="!showOptions" class="md:hidden flex flex-row w-full text-main items-center">
-                <ArrowLeftCircleIcon class="h-10 w-10" v-on:click="showOptions = true" />
+            <div v-if="!showOptions" class="flex flex-row gap-4 w-full text-main items-center justify-center">
+                <ArrowLeftCircleIcon class="md:hidden h-10 w-10" v-on:click="showOptions = true" />
                 <h1 class="font-bold">{{ selectedOption.title }}</h1>
             </div>
-            <p class="md:hidden font-normal text-xl font-serif text-justify ml-5 mt-10">{{ selectedOption.description }}</p>
+            
+            <div class="flex flex-col mt-10 mx-10 mb-10 justify-center gap-10">
+                <p v-if="selectedOption?.description != undefined"
+                    class="font-normal leading-relaxed text-xl text-left ">{{ selectedOption.description }}</p>
 
-            <div class="flex flex-col mt-10 ml-5">
-                <h1 class="font-bold">{{ selectedOption.title }}</h1>
+                <img v-if="selectedOption?.img != undefined"
+                    class="h-full w-full rounded-xl shadow-xl" :src="selectedOption.img" />
 
-                <p class="font-normal text-xl font-serif text-justify ml-5 mt-10">{{ selectedOption.description }}</p>
+                <video v-if="selectedOption?.video != undefined" class="w-full h-full rounded-xl shadow-xl"
+                    width="1280" height="720" :src="selectedOption.video" :controls="true">
+                </video>
             </div>
         </div>
 
-    </ViewsContent>
+    </div>
 </template>
