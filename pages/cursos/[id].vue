@@ -22,10 +22,11 @@ const cursos: Cursos = [{
             name: "1. Introducción",
             content: [
                 {
-                    title: "1 Electronica vasica", description: `
-## Preview
-You can enter preview of your document using
-[hola](https://google.com)`,
+                    title: "1 Electronica vasica", description: `asdasdasd [hola](https://google.com) Go ahead, delete all the content in this document to get started writing your own.
+
+- To force save use CMD+S/CTRL+S
+- To open preview use **CMD+I/CTRL+I**
+- To share use [writemd](https://writemd.xyz/p/650717cf548467765)`,
                     img: "https://blogs.iadb.org/conocimiento-abierto/wp-content/uploads/sites/10/2018/06/software-libre-codigo-abierto-1.jpg",
                     video: "https://www.youtube.com/watch?v=QEk8a_sVDlw"
                 },
