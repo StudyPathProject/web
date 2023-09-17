@@ -22,9 +22,10 @@ const cursos: Cursos = [{
             name: "1. Introducción",
             content: [
                 {
-                    title: "1 Electronica vasica", description: `Lorem ipsum dolor sit amet. Est soluta autem vel iste provident est galisum magnam aut dolorum delectus non totam illo! Et repellendus optio aut reprehenderit voluptas qui ullam voluptas et vitae consequuntur et quae culpa et sequi ullam. Sit optio rerum a fuga corporis At perferendis enim et obcaecati voluptatem et doloremque aspernatur. At debitis natus qui mollitia obcaecati quo sunt expedita ut totam possimus ab maiores provident sed dicta reiciendis.
-Qui architecto incidunt aut voluptatem quidem et minima porro ut perspiciatis enim hic quaerat officia. Qui mollitia dolore eum sint quos cum nesciunt internos At tempora autem est debitis vero in assumenda dolorem aut sunt cumque?
-Est iste tenetur sed saepe ipsam est ratione omnis. Hic voluptates nobis qui earum doloribus ut tempora voluptatem sed itaque vero ut officia accusantium qui dolorum consequuntur. Ut ullam reiciendis vel nulla labore et delectus repellat aut suscipit molestias est laborum quis vel quaerat iste?`,
+                    title: "1 Electronica vasica", description: `
+## Preview
+You can enter preview of your document using
+[hola](https://google.com)`,
                     img: "https://blogs.iadb.org/conocimiento-abierto/wp-content/uploads/sites/10/2018/06/software-libre-codigo-abierto-1.jpg",
                     video: "https://www.youtube.com/watch?v=QEk8a_sVDlw"
                 },
@@ -208,9 +209,9 @@ function changeSelectedOption(content: Content, cap: { name: string, content: Co
             </div>
             
             <div class="flex flex-col w-full mt-10 mb-10 justify-center items-center gap-10">
-                
-                <p v-if="selectedOption?.description != undefined"
-                    class="font-normal leading-relaxed text-xl md:w-full text-left mx-5">{{ selectedOption.description }}</p>
+
+                <Markdown v-if="selectedOption?.description != undefined"
+                    class="font-normal leading-relaxed text-xl md:w-full text-left mx-5" :markdownString="selectedOption.description"/>
 
                 <img v-if="selectedOption?.img != undefined"
                     class="h-full aspect-auto md:w-5/6 w-full rounded-xl shadow-xl" :src="selectedOption.img" />

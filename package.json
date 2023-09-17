@@ -19,6 +19,8 @@
     "nuxt-headlessui": "^1.1.4"
   },
   "dependencies": {
-    "@heroicons/vue": "^2.0.18"
+    "@heroicons/vue": "^2.0.18",
+    "@nuxt/content": "^2.8.2",
+    "markdown-it": "^13.0.1"
   }
 }
