@@ -7,6 +7,7 @@ const data = reactive({
   contenidos: await getContenidos("1", "1 - Introducción"), //? parameters: curso id, capitulo name
   page: 1,
 });
+
 </script>
 
 <template>
