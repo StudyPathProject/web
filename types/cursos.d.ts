@@ -9,13 +9,41 @@ export type Curso = {
 
 export type Capitulo = {
   name: string;
-}
+  Contenido: Contenido[];
+};
 
 export type Contenido = {
-  id: string,
-  text: string,
-  image: any
-}
+  id: string;
+  text: string;
+  image: {
+    data: Image[];
+  };
+};
+
+export type Format = {
+  ext: string;
+  hash: string;
+  height: number;
+  mime: string;
+  name: string;
+  path: string | null;
+  size: number;
+  url: string;
+  width: number;
+};
+
+export type Image = {
+  attributes: {
+    alternativeText: string | null;
+    caption: string | null;
+    formats: {
+      large: Format;
+      medium: Format;
+      small: Format;
+      thumbnail: Format;
+    };
+  };
+};
 
 export interface CursosResponse {
   cursos: {
@@ -32,12 +60,12 @@ export interface CursosResponse {
 }
 
 export interface CapitulosResponse {
-  curso:{
-    data:{
-      attributes:{
+  curso: {
+    data: {
+      attributes: {
         Capitulos: Capitulo[];
-        name:string;
-      },
+        name: string;
+      };
       id: string;
     };
   };
@@ -52,7 +80,7 @@ export interface ContenidosResponse {
         Capitulos: {
           name: string;
           Contenido: Contenido[];
-        };
+        }[];
       };
     };
   };
