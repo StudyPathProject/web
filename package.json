@@ -25,7 +25,6 @@
   "dependencies": {
     "@heroicons/vue": "^2.0.18",
     "graphql-request": "^6.1.0",
-    "@nuxt/content": "^2.8.2",
     "markdown-it": "^13.0.1"
   }
 }

@@ -32,10 +32,10 @@ export default {
     </figure>
 
         <div class="card-body">
-            <h2 class="card-title">{{ curso.title }}</h2>
-            <p>{{ curso.desc }}</p>
+            <h2 class="card-title">{{ curso.attributes.name }}</h2>
+            <p>{{ curso.attributes.description }}</p>
             <div class="card-actions justify-end">
-                <NuxtLink :to="'/cursos/'">
+                <NuxtLink :to="`/cursos/${curso.id}`">
                     <!-- + curso.id -->
                     <button class="btn btn-primary">Ver mas</button>
                 </NuxtLink>

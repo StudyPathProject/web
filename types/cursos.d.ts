@@ -8,13 +8,7 @@ export type Curso = {
 };
 
 export type Capitulo = {
-  id: string;
-  attributes: {
-    name: string;
-    Capitulos: {
-      name: string;
-    }
-  }
+  name: string;
 }
 
 export type Contenido = {
@@ -38,13 +32,19 @@ export interface CursosResponse {
 }
 
 export interface CapitulosResponse {
-  capitulos: {
-    data: Capitulo[];
+  curso:{
+    data:{
+      attributes:{
+        Capitulos: Capitulo[];
+        name:string;
+      },
+      id: string;
+    };
   };
 }
 
 export interface ContenidosResponse {
-  contenidos: {
+  curso: {
     data: {
       id: string;
       attributes: {
