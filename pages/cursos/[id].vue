@@ -32,5 +32,4 @@ let showOptions: Ref<boolean> = ref(true)
 
 <template>
     
-    </div>
 </template>
