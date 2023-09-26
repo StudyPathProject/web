@@ -45,7 +45,7 @@ if (process.client) {
 
             <h2 class="text-4xl min-h-16 w-full md:text-left text-center font-semibold text-black mb-4">{{ curso.name }}</h2>
 
-            <div v-for="capitulo in contenidoDelCurso" class="md:text-xl my-5 text-3xl md:mr-5">
+            <div v-for="capitulo in contenidoDelCurso" class="md:text-xl my-5 text-3xl hover:scale-y-110 hover:scale-x-105 transition-all md:mr-5">
                 <div class="flex flex-col w-full bg-main-2 shadow-xl text-white rounded-lg justify-between text-left font-medium p-2"
                     v-on:click="changeSelectedOption(capitulo)">
                     <span>{{ capitulo.name }}</span>
@@ -74,6 +74,11 @@ if (process.client) {
 
                 <CldVideoPlayer v-if="contenido.video" v-for="video in contenido.video.data" width="1920" height="1080"
                     :src="video.attributes.formats.medium.url" />
+            </div>
+        </div>
+        <div v-else class="flex justify-center -mt-32 md:w-full text-black w-screen md:mx-10 -mx-5">
+            <div class="flex flex-row w-full text-main items-center justify-center">
+                <h1 class="font-bold text-3xl">Seleccione un Capitulo</h1>
             </div>
         </div>
     </div>
