@@ -30,7 +30,7 @@ import {
           >Educación de Calidad</span
         >
         <h1 class="text-main-3 text-4xl font-bold mx-auto text-center">
-          Una forma innovadora de de estudiar
+          Una forma innovadora de estudiar
         </h1>
       </div>
 
