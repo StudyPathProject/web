@@ -19,9 +19,6 @@
   p {
     @apply text-gray-700;
   }
-  a {
-    @apply text-[#3D5B89] font-bold hover:underline underline-offset-1
-  }
   li {
     @apply text-main list-disc
   }
