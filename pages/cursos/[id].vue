@@ -9,6 +9,8 @@ let contenidoDelCurso = reactive([] as Capitulo[])
 
 const curso: { Capitulos: Capitulo[], name: string } = await getCapitulos(id.toString())
     .then((res) => {
+        res.curso.data.attributes.Capitulos.sort()
+
         res.curso.data.attributes.Capitulos.map(async (e) => {
             contenidoDelCurso.push(await getContenidos(id.toString(), e.name)
                 .then((res) => res.curso.data.attributes.Capitulos[0])
@@ -19,7 +21,6 @@ const curso: { Capitulos: Capitulo[], name: string } = await getCapitulos(id.toS
     })
     .catch((err) => { console.log(err); return err; })
 
-let showOptions: Ref<boolean> = ref(true)
 let SelectedCap: Ref<Capitulo | null> = ref(null)
 
 function changeSelectedOption(param: Capitulo) {
