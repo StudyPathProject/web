@@ -24,9 +24,8 @@ let SelectedCap: Ref<Capitulo | null> = ref(null)
 
 function changeSelectedOption(param: Capitulo) {
     SelectedCap.value = param
-    // SelectedCap.value.Contenido.forEach((e) => console.log(e))
-    // console.log(SelectedCap.value.Contenido.values())
 }
+
 if (process.client) {
     document.addEventListener("keydown", (event: KeyboardEvent) => {
         if (event.key === "Escape") {
@@ -45,7 +44,7 @@ if (process.client) {
 
             <h2 class="text-4xl min-h-16 w-full md:text-left text-center font-semibold text-black mb-4">{{ curso.name }}</h2>
 
-            <div v-for="capitulo in contenidoDelCurso" class="md:text-xl my-5 text-3xl hover:scale-y-110 hover:scale-x-105 transition-all md:mr-5">
+            <div v-for="capitulo in contenidoDelCurso" class="md:text-xl my-5 text-3xl hover:scale-y-110 hover:scale-x-105 transition-all duration-300 md:mr-5">
                 <div class="flex flex-col w-full bg-main-2 shadow-xl text-white rounded-lg justify-between text-left font-medium p-2"
                     v-on:click="changeSelectedOption(capitulo)">
                     <span>{{ capitulo.name }}</span>
@@ -59,7 +58,7 @@ if (process.client) {
         <div v-if="SelectedCap != null" class="text-left md:w-full text-black w-screen md:mx-10 -mx-5">
             <div class="flex flex-row gap-4 w-full text-main items-center justify-center">
                 <ArrowLeftCircleIcon class="md:hidden h-10 w-10" v-on:click="SelectedCap = null" />
-                <h1 class="font-bold text-3xl">{{ SelectedCap.name }}</h1>
+                <h1 class="font-bold text-5xl">{{ SelectedCap.name }}</h1>
             </div>
 
             <div v-for="contenido in SelectedCap['Contenido']"
@@ -78,7 +77,7 @@ if (process.client) {
         </div>
         <div v-else class="flex justify-center -mt-32 md:w-full text-black w-screen md:mx-10 -mx-5">
             <div class="flex flex-row w-full text-main items-center justify-center">
-                <h1 class="font-bold text-3xl">Seleccione un Capitulo</h1>
+                <h1 class="font-bold text-3xl">Seleccione un capitulo</h1>
             </div>
         </div>
     </div>
