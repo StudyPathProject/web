@@ -18,6 +18,9 @@ export type Contenido = {
   image: {
     data: Image[];
   };
+  video: {
+    data: Image[];
+  };
 };
 
 export type Format = {

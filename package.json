@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "@heroicons/vue": "^2.0.18",
+    "@nuxtjs/cloudinary": "^2.3.4",
     "graphql-request": "^6.1.0",
     "markdown-it": "^13.0.1"
   }

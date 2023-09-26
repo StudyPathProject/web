@@ -30,7 +30,7 @@ function changeSelectedOption(param: Capitulo) {
 if (process.client) {
     document.addEventListener("keydown", (event: KeyboardEvent) => {
         if (event.key === "Escape") {
-            SelectedCap.value = null    
+            SelectedCap.value = null
         }
     });
 }
@@ -40,13 +40,13 @@ if (process.client) {
 <template>
     <div class="flex md:flex-row flex-col mb-10 min-h-screen md:mx-10 mx-5 mt-10">
 
-        <div class="md:max-w-sm w-full md:min-h-full text-left min-h-screen text-main md:border-r-2 border-r-0 border-gray-300 "
-            :class="showOptions ? 'static' : ' md:flex-col md:flex hidden'">
+        <div class="md:max-w-sm w-full md:min-h-full text-left min-h-screen text-main md:border-r-2 border-r-0 border-gray-300"
+            :class="SelectedCap != null ? 'hidden md:block' : 'static'">
 
-            <h2 class="text-3xl min-h-16 w-full font-semibold text-black mb-4">{{ curso.name }} </h2>
+            <h2 class="text-4xl min-h-16 w-full md:text-left text-center font-semibold text-black mb-4">{{ curso.name }}</h2>
 
-            <div v-for="capitulo in contenidoDelCurso" class="md:text-xl text-2xl md:mr-5">
-                <div class="flex flex-col w-full justify-between text-left font-medium p-2"
+            <div v-for="capitulo in contenidoDelCurso" class="md:text-xl my-5 text-3xl md:mr-5">
+                <div class="flex flex-col w-full bg-main-2 shadow-xl text-white rounded-lg justify-between text-left font-medium p-2"
                     v-on:click="changeSelectedOption(capitulo)">
                     <span>{{ capitulo.name }}</span>
                     <div class="transition-opacity duration-700 ease-in"
@@ -58,8 +58,8 @@ if (process.client) {
 
         <div v-if="SelectedCap != null" class="text-left md:w-full text-black w-screen md:mx-10 -mx-5">
             <div class="flex flex-row gap-4 w-full text-main items-center justify-center">
-                <ArrowLeftCircleIcon class="md:hidden h-10 w-10" v-on:click="showOptions = true" />
-                <h1 class="font-bold text-4xl">{{ SelectedCap.name }}</h1>
+                <ArrowLeftCircleIcon class="md:hidden h-10 w-10" v-on:click="SelectedCap = null" />
+                <h1 class="font-bold text-3xl">{{ SelectedCap.name }}</h1>
             </div>
 
             <div v-for="contenido in SelectedCap['Contenido']"
@@ -70,8 +70,10 @@ if (process.client) {
 
                 <img v-if="contenido.image" v-for="img in contenido.image.data"
                     class="h-full aspect-auto md:w-5/6 w-full rounded-xl shadow-xl"
-                    :src="`https://strappi-production.up.railway.app${img.attributes.formats.medium.url}`" />
+                    :src="`https://strappi-production.up.railway.app${img.attributes.formats.small.url}`" />
 
+                <CldVideoPlayer v-if="contenido.video" v-for="video in contenido.video.data" width="1920" height="1080"
+                    :src="video.attributes.formats.medium.url" />
             </div>
         </div>
     </div>
