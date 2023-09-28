@@ -33,6 +33,16 @@ export async function getCursos(): Promise<CursosResponse> {
           attributes {
             name
             description
+            banner {
+              data {
+                attributes {
+                  alternativeText
+                  caption
+                  name
+                  formats
+                }
+              }
+            }
           }
         }
         meta {

@@ -1,4 +1,3 @@
-<script lang="ts" setup>
 import { getCapitulos, getContenidos, getCursos } from "@/middlewares/dao";
 
 const data = reactive({

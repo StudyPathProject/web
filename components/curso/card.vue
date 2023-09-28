@@ -16,6 +16,17 @@ export default {
       required: true,
     },
   },
+  methods: {
+    getImg(x: string | unknown): string | null {
+      if (typeof x != "string") return null;
+      const env = useRuntimeConfig();
+      const route =
+        (env.app.API_UPLOADS! as string)?.replace("/graphql", "") +
+        x.replace("/uploads", "");
+      console.log("ACA", route);
+      return route;
+    },
+  },
 };
 </script>
 
@@ -31,15 +42,21 @@ export default {
       />
     </figure>
 
-        <div class="card-body">
-            <h2 class="card-title">{{ curso.title }}</h2>
-            <p>{{ curso.desc }}</p>
-            <div class="card-actions justify-end">
-                <NuxtLink :to="'/cursos/'">
-                    <!-- + curso.id -->
-                    <button class="btn btn-primary">Ver mas</button>
-                </NuxtLink>
-            </div>
-        </div>
+    <div class="card-body">
+      <h2 class="card-title">{{ curso.attributes.name }}</h2>
+      <p class="truncate">
+        {{ curso.attributes.description }}
+      </p>
+      <div class="card-actions justify-end">
+        <NuxtLink :to="'/cursos/'">
+          <!-- + curso.id -->
+          <button
+            class="btn btn-primary bg-main border-none text-main hover:bg-main-mute"
+          >
+            Ver mas
+          </button>
+        </NuxtLink>
+      </div>
     </div>
+  </div>
 </template>
