@@ -1,5 +1,9 @@
 import { gql, GraphQLClient } from "graphql-request";
-import { CapitulosResponse, ContenidosResponse, CursosResponse } from "~/types/cursos";
+import {
+  CapitulosResponse,
+  ContenidosResponse,
+  CursosResponse,
+} from "~/types/cursos";
 
 // const config = {
 //   endpoint: env.private.API_ENDPOINT!,
@@ -33,6 +37,16 @@ export async function getCursos(): Promise<CursosResponse> {
           attributes {
             name
             description
+            banner {
+              data {
+                attributes {
+                  alternativeText
+                  caption
+                  name
+                  formats
+                }
+              }
+            }
           }
         }
         meta {
@@ -49,62 +63,70 @@ export async function getCursos(): Promise<CursosResponse> {
 
   const data = (await graphQLClient().request(query)) as CursosResponse;
   return data;
-};
+}
 
 export async function getCapitulos(id: string): Promise<CapitulosResponse> {
   const variables = {
-    id
-  }
+    id,
+  };
 
   const query = gql`
-  # Get curso by ID
-  query ($id: ID!) {
-    curso(id: $id) {
-      data {
-        id
-        attributes {
-          name
-          Capitulos {
+    # Get curso by ID
+    query ($id: ID!) {
+      curso(id: $id) {
+        data {
+          id
+          attributes {
             name
+            Capitulos {
+              name
+            }
           }
         }
       }
     }
-  }`;
+  `;
 
-  const data = (await graphQLClient().request(query, variables)) as CapitulosResponse;
+  const data = (await graphQLClient().request(
+    query,
+    variables
+  )) as CapitulosResponse;
   return data;
 }
 
-
-export async function getContenidos(id: string, capitulo: string): Promise<ContenidosResponse> {
+export async function getContenidos(
+  id: string,
+  capitulo: string
+): Promise<ContenidosResponse> {
   const variables = {
     id,
-    capitulo
-  }
+    capitulo,
+  };
 
-  const query = gql`# Get curso by ID
-  # Example:
-  # $id "1"
-  # $capitulo "Capitulo 1"
-  query ($id: ID!, $capitulo: String!) {
-    curso(id: $id) {
-      data {
-        id
-        attributes {
-          name
-          Capitulos(filters: { name: { eq: $capitulo } }) {
+  const query = gql`
+    # Get curso by ID
+    # Example:
+    # $id "1"
+    # $capitulo "Capitulo 1"
+    query ($id: ID!, $capitulo: String!) {
+      curso(id: $id) {
+        data {
+          id
+          attributes {
             name
-            Contenido {
-              id
-              text
-              image {
-                data {
-                  attributes {
-                    alternativeText
-                    caption
-                    name
-                    formats
+            Capitulos(filters: { name: { eq: $capitulo } }) {
+              name
+              Contenido {
+                id
+                text
+                image {
+                  data {
+                    attributes {
+                      alternativeText
+                      caption
+                      name
+                      formats
+                    }
                   }
                 }
               }
@@ -113,8 +135,11 @@ export async function getContenidos(id: string, capitulo: string): Promise<Conte
         }
       }
     }
-  }`;
+  `;
 
-  const data = (await graphQLClient().request(query, variables)) as ContenidosResponse;
+  const data = (await graphQLClient().request(
+    query,
+    variables
+  )) as ContenidosResponse;
   return data;
 }

@@ -19,25 +19,13 @@ const data = reactive({
     </div>
 
     <div v-if="data.cursos && data.page">
-      <div
-        class="min-h-[50vh] w-full flex flex-wrap gap-4 mb-14 justify-evenly"
-      >
-        <CursoCard
-          v-for="c in data.cursos.cursos.data"
-          :curso="c"
-          :key="c.id"
-        />
+      <div class="min-h-[50vh] w-full flex flex-wrap gap-4 mb-14 justify-evenly">
+        <CursoCard v-for="c in data.cursos.cursos.data" :curso="c" :key="c.id" />
       </div>
 
-      <UPagination
-        v-if="data.cursos.cursos.data && data.cursos.cursos.data.length >= 20"
-        :model-value="data.page || 1"
-        class="mx-auto mb-10"
-        size="md"
-        :page-count="data.page"
-        :total="data.cursos.cursos.data.length"
-        :inactive-button="{ color: 'white' }"
-      />
+      <UPagination v-if="data.cursos.cursos.data && data.cursos.cursos.data.length >= 20" :model-value="data.page || 1"
+        class="mx-auto mb-10" size="md" :page-count="data.page" :total="data.cursos.cursos.data.length"
+        :inactive-button="{ color: 'white' }" />
     </div>
   </ViewsContent>
 </template>

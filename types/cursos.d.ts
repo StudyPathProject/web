@@ -3,7 +3,20 @@ export type Curso = {
   attributes: {
     name: string;
     description: string;
-    banner?: string;
+    banner?: {
+      data: {
+        attributes: {
+          alternativeText: string;
+          caption: string;
+          name: string;
+          formats: {
+            thumbnail: {
+              url: string;
+            };
+          };
+        };
+      };
+    };
   };
 };
 
