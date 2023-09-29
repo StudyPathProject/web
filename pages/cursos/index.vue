@@ -1,3 +1,4 @@
+<script lang="ts" setup>
 import { getCapitulos, getContenidos, getCursos } from "@/middlewares/dao";
 
 const data = reactive({
@@ -6,7 +7,6 @@ const data = reactive({
   contenidos: await getContenidos("1", "1 - Introducción"), //? parameters: curso id, capitulo name
   page: 1,
 });
-
 </script>
 
 <template>
