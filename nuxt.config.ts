@@ -1,3 +1,5 @@
+import svgLoader from "vite-svg-loader";
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: [
@@ -5,6 +7,7 @@ export default defineNuxtConfig({
     "nuxt-headlessui",
     "@nuxtjs/tailwindcss",
     "@nuxtjs/cloudinary",
+    "@pinia/nuxt",
   ],
   devtools: { enabled: true },
   runtimeConfig: {
@@ -12,6 +15,7 @@ export default defineNuxtConfig({
       API_TOKEN: process.env.API_TOKEN!, //   "Bearer b015996d675dab1",
       API_ENDPOINT: process.env.API_ENDPOINT!, // "http://localhost:1337/graphql",
       API_UPLOADS: process.env.API_UPLOADS!,
+      API_BASE: process.env.API_BASE!,
     },
   },
 
@@ -20,5 +24,17 @@ export default defineNuxtConfig({
       title: "Studypath",
       meta: [{ name: "description", content: "Una nueva forma de aprender" }],
     },
+  },
+
+  vite: {
+    plugins: [svgLoader()],
+  },
+
+  pinia: {
+    autoImports: [
+      // automatically imports `defineStore`
+      "defineStore", // import { defineStore } from 'pinia'
+      ["defineStore", "definePiniaStore"], // import { defineStore as definePiniaStore } from 'pinia'
+    ],
   },
 });
