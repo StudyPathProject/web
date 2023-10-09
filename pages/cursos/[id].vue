@@ -81,11 +81,11 @@ if (process.client) {
 
                 <img v-for="img in contenido.image.data"
                     :src="'https://strappi-production.up.railway.app/uploads/' + img.attributes.formats.medium.url" />
-                    
+
                 <CldVideoPlayer v-for="video,index in contenido.video.data" :key="index"
                     :src="`https://strappi-production.up.railway.app/uploads/${video.attributes.formats.medium.url}`"
                     :controls="true" :loop="false" :muted="false" autoPlay="false" :logo="false" :height="400"
-                    la altura deseada :width="600"/>
+                    :width="600"/>
             </div>
         </div>
         <div v-else class="flex justify-center -mt-32 md:w-full text-black w-screen md:mx-10 -mx-5">
