@@ -12,7 +12,11 @@ type AuthResponse = { user: User; jwt: string };
 // the first argument is a unique id of the store across your application
 export const useAuthStore = defineStore("auth", {
   state: () => ({
-    user: null,
+    user: null as null | {
+      username: string;
+      email: string;
+    },
+    role: "" as string,
     jwt: "",
   }),
   getters: {
@@ -21,12 +25,11 @@ export const useAuthStore = defineStore("auth", {
   },
   actions: {
     async TryLogin(payload: { email: string; password: string }) {
-      console.log(payload);
       const { email, password } = payload;
       const env = useRuntimeConfig();
 
       try {
-        const url = `${env.app.API_BASE}/api/auth/local`;
+        const url = `${env.app.API_BASE}/api/auth/local?populate=role`;
         await $fetch(url, {
           headers: {
             "Content-Type": "application/json",
@@ -37,12 +40,15 @@ export const useAuthStore = defineStore("auth", {
             password: password,
           },
         }).then((response) => {
-          console.log("Well done!");
           const { user, jwt } = response as AuthResponse;
-
-          // @ts-ignore
           this.user = user;
           this.jwt = jwt;
+
+          if (process.server) return;
+
+          localStorage.setItem("username", user.username);
+          localStorage.setItem("email", user.email);
+          localStorage.setItem("jwt", jwt);
         });
         return true;
       } catch (e) {
@@ -51,7 +57,26 @@ export const useAuthStore = defineStore("auth", {
     },
 
     SignOut() {
-      this.$reset();
+      // this.$reset();
+      this.user = null;
+      this.jwt = "";
+
+      if (process.server) return;
+
+      localStorage.removeItem("username");
+      localStorage.removeItem("email");
+      localStorage.removeItem("jwt");
+    },
+
+    getFromLocal() {
+      // Do not run on server
+      if (process.server) return;
+
+      this.user = {
+        username: localStorage.getItem("username") ?? "",
+        email: localStorage.getItem("email") ?? "",
+      };
+      this.jwt = localStorage.getItem("jwt") ?? "";
     },
   },
 });

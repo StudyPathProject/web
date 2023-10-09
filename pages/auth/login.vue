@@ -42,10 +42,8 @@ export default {
 
 <template>
   <div>
-    <div class="flex items-center justify-center h-screen">
-      <div
-        class="hidden sm:flex w-1/2 h-screen place-items-center justify-center"
-      >
+    <div class="flex items-center justify-center h-[90vh]">
+      <div class="hidden sm:flex w-1/2 h-screen place-items-center justify-center">
         <SVG />
       </div>
 
@@ -58,9 +56,7 @@ export default {
             </router-link>
           </div>
 
-          <h1
-            class="font-bold text-left font-montserrat text-4xl sm:text-6xl mb-10"
-          >
+          <h1 class="font-bold text-left font-montserrat text-4xl sm:text-6xl mb-10">
             Iniciar Sesión
           </h1>
 
@@ -70,29 +66,20 @@ export default {
               <h1 class="text-left text-xl font-bold mb-5 font-montserrat">
                 Correo electrónico
               </h1>
-              <input
-                type="email"
-                v-model="email"
-                class="text-sm outline-none pb-5 w-4/5 bg-transparent border-b hover:border-emerald-400 focus:border-emerald-600"
-              />
+              <input type="email" v-model="email"
+                class="text-sm outline-none pb-5 w-4/5 bg-transparent border-b hover:border-emerald-400 focus:border-emerald-600" />
             </div>
 
             <div class="my-5">
               <h1 class="text-left text-xl font-bold mb-5 font-montserrat">
                 Contraseña
               </h1>
-              <input
-                type="password"
-                v-model="password"
-                class="text-sm outline-none pb-5 w-4/5 bg-transparent border-b hover:border-emerald-400 focus:border-emerald-600"
-              />
+              <input type="password" v-model="password"
+                class="text-sm outline-none pb-5 w-4/5 bg-transparent border-b hover:border-emerald-400 focus:border-emerald-600" />
             </div>
 
-            <button
-              type="submit"
-              :disabled="password.length < 3"
-              class="bg-main text-white flex rounded-xl justify-center hover:rounded-3xl transition-all"
-            >
+            <button type="submit" :disabled="password.length < 3"
+              class="bg-main text-white flex rounded-xl justify-center hover:rounded-3xl transition-all">
               <div class="w-fit flex hover:text-gray-200 py-3 px-6">
                 Entrar
                 <ArrowRightCircleIcon class="h-6 pl-2" />

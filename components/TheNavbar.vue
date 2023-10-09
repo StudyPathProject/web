@@ -5,8 +5,7 @@
         <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
           <!-- Mobile menu button-->
           <DisclosureButton
-            class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
-          >
+            class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
             <span class="absolute -inset-0.5" />
             <span class="sr-only">Open main menu</span>
             <Bars3Icon v-if="!open" class="block h-6 w-6" aria-hidden="true" />
@@ -14,40 +13,26 @@
           </DisclosureButton>
         </div>
 
-        <div
-          class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start"
-        >
+        <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
           <div class="flex flex-shrink-0 items-center">
             <CommonBrand :logo="true" />
           </div>
           <div class="hidden sm:ml-6 sm:block">
             <div class="flex space-x-4">
-              <NuxtLink
-                v-for="item in navigation"
-                :key="item.name"
-                :to="item.href"
-                class="transition-all"
-                :class="[
-                  item.current
-                    ? 'bg-main text-white'
-                    : 'text-main hover:bg-[#2e8a7c67] hover:text-[#2d4261]',
-                  'rounded-md px-3 py-2 text-sm font-medium',
-                ]"
-                :aria-current="item.current ? 'page' : undefined"
-                >{{ item.name }}</NuxtLink
-              >
+              <NuxtLink v-for="item in navigation" :key="item.name" :to="item.href" class="transition-all" :class="[
+                item.current
+                  ? 'bg-main text-white'
+                  : 'text-main hover:bg-[#2e8a7c67] hover:text-[#2d4261]',
+                'rounded-md px-3 py-2 text-sm font-medium',
+              ]" :aria-current="item.current ? 'page' : undefined">{{ item.name }}</NuxtLink>
             </div>
           </div>
         </div>
 
         <!-- Login Button -->
-        <div
-          class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
-        >
+        <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
           <div v-if="!getJWT" class="flex place-items-center">
-            <CommonButton variant="main-2" to="/auth/login"
-              >Iniciar Sesión</CommonButton
-            >
+            <CommonButton variant="main-2" to="/auth/login">Iniciar Sesión</CommonButton>
 
             <div class="h-8 w-[1px] mx-3 rounded-full bg-black"></div>
           </div>
@@ -55,31 +40,26 @@
           <!-- * ON LOGGED - Profile dropdown  -->
           <Menu as="div" class="mx-3" :class="!getJWT ? 'hidden' : 'relative'">
             <div class="flex place-items-center justify-center">
-              <p class="pr-2">{{ getUser?.username }}</p>
+              <p class="pr-2">{{ getUser?.username ?? "" }}</p>
               <MenuButton
-                class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-              >
+                class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                 <span class="absolute -inset-1.5" />
                 <span class="sr-only">Open user menu</span>
-                <img
-                  class="h-8 w-8 rounded-full"
-                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                  alt=""
-                />
+
+                <div class="avatar placeholder">
+                  <div class="bg-neutral-focus text-neutral-content rounded-full w-10">
+                    <span>{{ getAvatar(getUser?.username) }}</span>
+                  </div>
+                </div>
               </MenuButton>
             </div>
 
-            <transition
-              enter-active-class="transition ease-out duration-100"
-              enter-from-class="transform opacity-0 scale-95"
-              enter-to-class="transform opacity-100 scale-100"
-              leave-active-class="transition ease-in duration-75"
-              leave-from-class="transform opacity-100 scale-100"
-              leave-to-class="transform opacity-0 scale-95"
-            >
+            <transition enter-active-class="transition ease-out duration-100"
+              enter-from-class="transform opacity-0 scale-95" enter-to-class="transform opacity-100 scale-100"
+              leave-active-class="transition ease-in duration-75" leave-from-class="transform opacity-100 scale-100"
+              leave-to-class="transform opacity-0 scale-95">
               <MenuItems
-                class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
-              >
+                class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                 <!-- <MenuItem v-slot="{ active }">
                   <a
                     href="#"
@@ -101,16 +81,12 @@
                   >
                 </MenuItem> -->
                 <MenuItem v-slot="{ active }">
-                  <p
-                    class="cursor-pointer"
-                    :class="[
-                      active ? 'bg-gray-100' : '',
-                      'block px-4 py-2 text-sm text-gray-700',
-                    ]"
-                    @click="AuthStore.SignOut()"
-                  >
-                    Sign out
-                  </p>
+                <p class="cursor-pointer" :class="[
+                  active ? 'bg-gray-100' : '',
+                  'block px-4 py-2 text-sm text-gray-700',
+                ]" @click="AuthStore.SignOut()">
+                  Sign out
+                </p>
                 </MenuItem>
               </MenuItems>
             </transition>
@@ -119,15 +95,8 @@
           <!-- Redes -->
           <div class="flex" v-for="red in redes" :key="red.svg">
             <a :href="red.href" target="_blank">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                :fill="iconColor"
-                x="0px"
-                y="0px"
-                width="40"
-                height="40"
-                viewBox="0 0 24 24"
-              >
+              <svg xmlns="http://www.w3.org/2000/svg" :fill="iconColor" x="0px" y="0px" width="40" height="40"
+                viewBox="0 0 24 24">
                 <path :d="red.svg"></path>
               </svg>
             </a>
@@ -146,20 +115,12 @@
 
     <DisclosurePanel class="sm:hidden">
       <div class="space-y-1 px-2 pb-3 pt-2">
-        <DisclosureButton
-          v-for="item in navigation"
-          :key="item.name"
-          as="a"
-          :href="item.href"
-          :class="[
-            item.current
-              ? 'bg-gray-900 text-white'
-              : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-            'block rounded-md px-3 py-2 text-base font-medium',
-          ]"
-          :aria-current="item.current ? 'page' : undefined"
-          >{{ item.name }}</DisclosureButton
-        >
+        <DisclosureButton v-for="item in navigation" :key="item.name" as="a" :href="item.href" :class="[
+          item.current
+            ? 'bg-gray-900 text-white'
+            : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+          'block rounded-md px-3 py-2 text-base font-medium',
+        ]" :aria-current="item.current ? 'page' : undefined">{{ item.name }}</DisclosureButton>
       </div>
     </DisclosurePanel>
   </Disclosure>
@@ -198,6 +159,13 @@ const redes = [
     svg: "M21.582,6.186c-0.23-0.86-0.908-1.538-1.768-1.768C18.254,4,12,4,12,4S5.746,4,4.186,4.418 c-0.86,0.23-1.538,0.908-1.768,1.768C2,7.746,2,12,2,12s0,4.254,0.418,5.814c0.23,0.86,0.908,1.538,1.768,1.768 C5.746,20,12,20,12,20s6.254,0,7.814-0.418c0.861-0.23,1.538-0.908,1.768-1.768C22,16.254,22,12,22,12S22,7.746,21.582,6.186z M10,15.464V8.536L16,12L10,15.464z",
   },
 ];
+
+function getAvatar(user?: string) {
+  if (!user) return
+  const x = user.split(" ")
+  if (x[1]) return x[0][0] + x[1][0]
+  return x[0][0] + x[1][0]
+}
 
 const navigation = [
   { name: "Cursos", href: "/cursos", current: false },

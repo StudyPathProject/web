@@ -4,25 +4,17 @@ import {
   ContenidosResponse,
   CursosResponse,
 } from "~/types/cursos";
-
-// const config = {
-//   endpoint: env.private.API_ENDPOINT!,
-//   /**
-//    * Per-client options overrides
-//    * See: https://github.com/prisma-labs/graphql-request#passing-more-options-to-fetch
-//    */
-//   options: {
-//     headers: {
-//       authorization: env.private.API_TOKEN!,
-//     },
-//   },
-// };
+import { useAuthStore } from "~/stores/auth";
 
 const graphQLClient = () => {
   const env = useRuntimeConfig();
+  const authStore = useAuthStore();
+  const jwt = "Bearer " + authStore.getJWT;
+  console.log(jwt);
+
   return new GraphQLClient(env.app.API_ENDPOINT!, {
     headers: {
-      authorization: env.app.API_TOKEN!,
+      Authorization: jwt,
     },
   });
 };
