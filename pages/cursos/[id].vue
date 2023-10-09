@@ -2,11 +2,11 @@
 import { ArrowLeftCircleIcon } from '@heroicons/vue/24/solid'
 import { getCapitulos, getContenidos } from '~/middlewares/dao';
 import { Capitulo, Contenido } from '~/types/cursos';
-  import {
+import {
     Disclosure,
     DisclosureButton,
     DisclosurePanel,
-  } from '@headlessui/vue'
+} from '@headlessui/vue'
 
 const { id } = useRoute().params
 
@@ -30,7 +30,7 @@ let SelectedCap: Ref<Capitulo | null> = ref(null)
 
 function changeSelectedOption(param: Capitulo) {
     SelectedCap.value = param
-    
+
 }
 
 if (process.client) {
@@ -48,13 +48,16 @@ if (process.client) {
         <div class="md:max-w-sm w-full md:min-h-full text-left min-h-screen text-main md:border-r-2 border-r-0 border-gray-300"
             :class="SelectedCap != null ? 'hidden md:block' : 'static'">
 
-            <h2 class="text-4xl min-h-16 w-full md:text-left text-center font-semibold text-black mb-4">{{ curso.name }}</h2>
+            <h2 class="text-4xl min-h-16 w-full md:text-left text-center font-semibold text-black mb-4">{{ curso.name }}
+            </h2>
 
             <div v-for="capitulo in contenidoDelCurso" class="md:text-xl my-5 text-3xl md:mr-5">
-                <Disclosure as="div" class="flex flex-col w-full bg-main-2 shadow-xl text-white rounded-lg justify-between text-left font-medium p-2"
+                <Disclosure as="div"
+                    class="flex flex-col w-full bg-main-2 shadow-xl text-white rounded-lg justify-between text-left font-medium p-2"
                     v-on:click="changeSelectedOption(capitulo)">
                     <DisclosureButton>{{ capitulo.name }}</DisclosureButton>
-                    <DisclosurePanel as="div" class="transition-all hover:scale-y-110 hover:scale-x-105 duration-700 ease-in"
+                    <DisclosurePanel as="div"
+                        class="transition-all hover:scale-y-110 hover:scale-x-105 duration-700 ease-in"
                         :class="capitulo.name == SelectedCap?.name ? 'h-1 w-10 bg-main-2-darker shadow-xl rounded-xl mr-5 opacity-100' : 'opacity-0'">
                         <div v-if="SelectedCap != null" v-for="contenido in SelectedCap['Contenido']" class="text-black">
                             {{ contenido.text.split('\n')[0] }}
@@ -76,6 +79,13 @@ if (process.client) {
                 <Markdown v-if="contenido.text" class="font-normal leading-relaxed text-xl md:w-full text-left mx-5"
                     :markdownString="contenido.text" />
 
+                <img v-for="img in contenido.image.data"
+                    :src="'https://strappi-production.up.railway.app/uploads/' + img.attributes.formats.medium.url" />
+                    
+                <CldVideoPlayer v-for="video,index in contenido.video.data" :key="index"
+                    :src="`https://strappi-production.up.railway.app/uploads/${video.attributes.formats.medium.url}`"
+                    :controls="true" :loop="false" :muted="false" autoPlay="false" :logo="false" :height="400"
+                    la altura deseada :width="600"/>
             </div>
         </div>
         <div v-else class="flex justify-center -mt-32 md:w-full text-black w-screen md:mx-10 -mx-5">
