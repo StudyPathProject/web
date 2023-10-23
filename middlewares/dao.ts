@@ -10,7 +10,8 @@ const graphQLClient = () => {
   const env = useRuntimeConfig();
   const authStore = useAuthStore();
   const jwt = "Bearer " + authStore.getJWT;
-  console.log(jwt);
+
+  if (!authStore.getJWT) return false;
 
   return new GraphQLClient(env.app.API_ENDPOINT!, {
     headers: {
@@ -19,7 +20,13 @@ const graphQLClient = () => {
   });
 };
 
-export async function getCursos(): Promise<CursosResponse> {
+async function Query<T>(q: string, vars?: any): Promise<T | false> {
+  const client = graphQLClient();
+  if (client) return await client.request(q, vars);
+  return false;
+}
+
+export async function getCursos() {
   const query = gql`
     # Get all cursos
     query {
@@ -53,11 +60,11 @@ export async function getCursos(): Promise<CursosResponse> {
     }
   `;
 
-  const data = (await graphQLClient().request(query)) as CursosResponse;
+  const data = await Query<CursosResponse>(query);
   return data;
 }
 
-export async function getCapitulos(id: string): Promise<CapitulosResponse> {
+export async function getCapitulos(id: string) {
   const variables = {
     id,
   };
@@ -79,17 +86,11 @@ export async function getCapitulos(id: string): Promise<CapitulosResponse> {
     }
   `;
 
-  const data = (await graphQLClient().request(
-    query,
-    variables
-  )) as CapitulosResponse;
+  const data = await Query<CapitulosResponse>(query, variables);
   return data;
 }
 
-export async function getContenidos(
-  id: string,
-  capitulo: string
-): Promise<ContenidosResponse> {
+export async function getContenidos(id: string, capitulo: string) {
   const variables = {
     id,
     capitulo,
@@ -129,9 +130,6 @@ export async function getContenidos(
     }
   `;
 
-  const data = (await graphQLClient().request(
-    query,
-    variables
-  )) as ContenidosResponse;
+  const data = await Query<ContenidosResponse>(query, variables);
   return data;
 }

@@ -1,10 +1,14 @@
 <script lang="ts" setup>
 import { getCapitulos, getContenidos, getCursos } from "@/middlewares/dao";
+import { useAuthStore } from "~/stores/auth";
+
+const authStore = useAuthStore()
 
 const data = reactive({
   cursos: await getCursos(),
   capitulos: await getCapitulos("1"), //? parameter: curso id
   contenidos: await getContenidos("1", "1 - Introducción"), //? parameters: curso id, capitulo name
+  authed: await authStore.getJWT,
   page: 1,
 });
 
@@ -26,6 +30,14 @@ const data = reactive({
       <UPagination v-if="data.cursos.cursos.data && data.cursos.cursos.data.length >= 20" :model-value="data.page || 1"
         class="mx-auto mb-10" size="md" :page-count="data.page" :total="data.cursos.cursos.data.length"
         :inactive-button="{ color: 'white' }" />
+    </div>
+
+    <div v-else-if="!data.authed">
+      <CommonError>Unauthorized</CommonError>
+    </div>
+
+    <div v-else>
+      <CommonError>A ocurrido un error</CommonError>
     </div>
   </ViewsContent>
 </template>

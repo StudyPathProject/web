@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ArrowLeftCircleIcon } from '@heroicons/vue/24/solid'
 import { getCapitulos, getContenidos } from '~/middlewares/dao';
-import { Capitulo, Contenido } from '~/types/cursos';
+import { Capitulo } from '~/types/cursos';
 import {
     Disclosure,
     DisclosureButton,
@@ -12,17 +12,22 @@ const { id } = useRoute().params
 
 let contenidoDelCurso = reactive([] as Capitulo[])
 
-const curso: { Capitulos: Capitulo[], name: string } = await getCapitulos(id.toString())
+const curso: { Capitulos: Capitulo[], name: string } | false = await getCapitulos(id.toString())
     .then((res) => {
+        if (!res) return res
+
         res.curso.data.attributes.Capitulos.sort()
 
         res.curso.data.attributes.Capitulos.map(async (e) => {
-            contenidoDelCurso.push(await getContenidos(id.toString(), e.name)
-                .then((res) => res.curso.data.attributes.Capitulos[0])
-            )
+            const contents = await getContenidos(id.toString(), e.name)
+                .then(res => !res ? false : res.curso.data.attributes.Capitulos[0])
+
+            if (!contents) return false
+            contenidoDelCurso.push(contents)
         })
 
         return res.curso.data.attributes
+
     })
     .catch((err) => { console.log(err); return err; })
 
@@ -48,7 +53,8 @@ if (process.client) {
         <div class="md:max-w-sm w-full md:min-h-full text-left min-h-screen text-main md:border-r-2 border-r-0 border-gray-300"
             :class="SelectedCap != null ? 'hidden md:block' : 'static'">
 
-            <h2 class="text-4xl min-h-16 w-full md:text-left text-center font-semibold text-black mb-4">{{ curso.name }}
+            <h2 class="text-4xl min-h-16 w-full md:text-left text-center font-semibold text-black mb-4">{{ curso ?
+                curso.name : null }}
             </h2>
 
             <div v-for="capitulo in contenidoDelCurso" class="md:text-xl my-5 text-3xl md:mr-5">
@@ -82,10 +88,10 @@ if (process.client) {
                 <img v-for="img in contenido.image.data"
                     :src="'https://strappi-production.up.railway.app/uploads/' + img.attributes.formats.medium.url" />
 
-                <CldVideoPlayer v-for="video,index in contenido.video.data" :key="index"
+                <CldVideoPlayer v-for="video, index in contenido.video.data" :key="index"
                     :src="`https://strappi-production.up.railway.app/uploads/${video.attributes.formats.medium.url}`"
                     :controls="true" :loop="false" :muted="false" autoPlay="false" :logo="false" :height="400"
-                    :width="600"/>
+                    :width="600" />
             </div>
         </div>
         <div v-else class="flex justify-center -mt-32 md:w-full text-black w-screen md:mx-10 -mx-5">

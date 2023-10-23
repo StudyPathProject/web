@@ -7,15 +7,14 @@
         <!-- h-96 sm:h-80  w-96 sm:w-64 -->
 
         <div class="avatar" v-if="e.p">
-          <div class="w-full rounded-full bg-neutral-focus text-neutral-content min-w-[120px] max-h-[150px]">
-            <img :src="getImg(e.name, e.surname) || ''" class="object-cover h-full w-full" alt="">
+          <div class="w-[200px] rounded-full">
+            <img :src="getImg(e.name, e.surname) || ''" class="aspect-square object-top " alt="">
           </div>
         </div>
 
         <div class="avatar placeholder" v-else>
           <div class="bg-neutral-focus text-neutral-content rounded-full w-24">
             <span class="text-3xl uppercase">{{ e.name[0] }}{{ e.surname[0] }}</span>
-
           </div>
         </div>
 
