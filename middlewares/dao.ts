@@ -13,7 +13,9 @@ const graphQLClient = () => {
 
   if (!authStore.getJWT) return false;
 
-  return new GraphQLClient(env.app.API_ENDPOINT!, {
+  const url = env.app.API_BASE + "/graphql"
+
+  return new GraphQLClient(url, {
     headers: {
       Authorization: jwt,
     },

@@ -12,7 +12,6 @@
   "devDependencies": {
     "@nuxt/devtools": "latest",
     "@nuxthq/ui": "^2.7.0",
-    "@nuxtjs/pwa": "^3.3.5",
     "@nuxtjs/tailwindcss": "^6.8.0",
     "@types/graphql": "^14.5.0",
     "daisyui": "^3.6.5",

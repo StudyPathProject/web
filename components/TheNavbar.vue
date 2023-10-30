@@ -164,7 +164,7 @@ function getAvatar(user?: string) {
   if (!user) return
   const x = user.split(" ")
   if (x[1]) return x[0][0] + x[1][0]
-  return x[0][0] + x[1][0]
+  return ""
 }
 
 const navigation = [

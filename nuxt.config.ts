@@ -12,10 +12,10 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   runtimeConfig: {
     app: {
-      API_TOKEN: process.env.API_TOKEN!, //   "Bearer b015996d675dab1",
-      API_ENDPOINT: process.env.API_ENDPOINT!, // "http://localhost:1337/graphql",
-      API_UPLOADS: process.env.API_UPLOADS!,
-      API_BASE: process.env.API_BASE!,
+      API_BASE: process.env.API_BASE,
+      // API_ENDPOINT: process.env.API_ENDPOINT!, // "http://localhost:1337/graphql",
+      // API_TOKEN: process.env.API_TOKEN, //   "Bearer b015996d675dab1",
+      // API_UPLOADS: process.env.API_UPLOADS,
     },
   },
 
