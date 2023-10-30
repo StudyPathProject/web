@@ -27,7 +27,7 @@ export const useAuthStore = defineStore("auth", {
     async TryLogin(payload: { email: string; password: string }) {
       const { email, password } = payload;
       const env = useRuntimeConfig();
-      console.log(env.app)
+
       try {
         const url = `${env.app.API_BASE!}/api/auth/local?populate=role`;
         await $fetch(url, {
