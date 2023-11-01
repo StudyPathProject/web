@@ -1,63 +1,47 @@
-# Nuxt 3 Minimal Starter
+# StudyPath Website
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+[![CI](https://github.com/StudyPathProject/web/actions/workflows/ci.yaml/badge.svg)](https://github.com/StudyPathProject/web/actions/workflows/ci.yaml) [![Netlify Status](https://api.netlify.com/api/v1/badges/ff4db218-15c8-4bae-9ba0-ab500b2010aa/deploy-status)](https://app.netlify.com/sites/studypathonline/deploys)
 
-## Setup
+Ver mas en [Documentación de Nuxt 3](https://nuxt.com/docs/getting-started/introduction) para buscar información.
 
-Make sure to install the dependencies:
+## Dominios
+
+- [Plataforma web .com.ar](https://studypath.com.ar)
+- [Plataforma web .store](https://studypath.store)
+- [Panel de Administración](https://studypath.online)
+
+## Instalación
+
+Instalar dependencias:
 
 ```bash
 # npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
+npm ci
 ```
 
-## Development Server
+## Servidor de desarrollo
 
-Start the development server on `http://localhost:3000`:
+Encender servidor de desarrollo `http://localhost:3000`:
 
 ```bash
 # npm
 npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
 ```
 
-## Production
+## Producción
 
-Build the application for production:
+Buildear para producción:
 
 ```bash
 # npm
 npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
 ```
 
-Locally preview production build:
+Probar build de producción de manera local:
 
 ```bash
 # npm
 npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Ver mas en [documentación de despliegue](https://nuxt.com/docs/getting-started/deployment) para mas información.

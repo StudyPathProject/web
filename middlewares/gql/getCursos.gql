@@ -1,0 +1,21 @@
+# Get all cursos
+query {
+  cursos {
+    data {
+      id
+      attributes {
+        name
+        description
+        public
+      }
+    }
+    meta {
+      pagination {
+        page
+        pageSize
+        total
+        pageCount
+      }
+    }
+  }
+}

@@ -1,7 +1,7 @@
-<script setup lang="ts">
-
-</script>
-
 <template>
-  <h1>Coming soon...</h1>
+  <ViewsHomeMainView />
+  <ViewsHomeOurVision />
+  <ViewsHomeWhatIs />
+  <ViewsHomeQualityEducation />
+  <ViewsHomeAboutUs />
 </template>
