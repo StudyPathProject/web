@@ -8,7 +8,6 @@ const data = reactive({
   cursos: await getCursos(),
   capitulos: await getCapitulos("1"), //? parameter: curso id
   contenidos: await getContenidos("1", "1 - Introducción"), //? parameters: curso id, capitulo name
-  authed: await authStore.getJWT,
   page: 1,
 });
 
@@ -22,7 +21,7 @@ const data = reactive({
       <p>Filtros</p>
     </div>
 
-    <div v-if="data.cursos && data.page">
+    <div v-if="data.cursos">
       <div class="min-h-[50vh] w-full flex flex-wrap gap-4 mb-14 justify-evenly">
         <CursoCard v-for="c in data.cursos.cursos.data" :curso="c" :key="c.id" />
       </div>
@@ -30,10 +29,6 @@ const data = reactive({
       <UPagination v-if="data.cursos.cursos.data && data.cursos.cursos.data.length >= 20" :model-value="data.page || 1"
         class="mx-auto mb-10" size="md" :page-count="data.page" :total="data.cursos.cursos.data.length"
         :inactive-button="{ color: 'white' }" />
-    </div>
-
-    <div v-else-if="!data.authed">
-      <CommonError>Unauthorized</CommonError>
     </div>
 
     <div v-else>

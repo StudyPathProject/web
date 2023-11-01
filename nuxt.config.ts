@@ -14,7 +14,7 @@ export default defineNuxtConfig({
     app: {
       API_BASE: process.env.API_BASE,
       // API_ENDPOINT: process.env.API_ENDPOINT!, // "http://localhost:1337/graphql",
-      // API_TOKEN: process.env.API_TOKEN, //   "Bearer b015996d675dab1",
+      API_TOKEN: process.env.API_TOKEN, //   "Bearer b015996d675dab1",
       // API_UPLOADS: process.env.API_UPLOADS,
     },
   },

@@ -11,15 +11,14 @@ const graphQLClient = () => {
   const authStore = useAuthStore();
   const jwt = "Bearer " + authStore.getJWT;
 
-  if (!authStore.getJWT) return false;
+  // if (!authStore.getJWT) return false;
 
-  const url = env.app.API_BASE + "/graphql"
+  const url = env.app.API_BASE! + "/graphql";
 
-  return new GraphQLClient(url, {
-    headers: {
-      Authorization: jwt,
-    },
-  });
+  const x = {};
+  // @ts-ignore
+  x["Authorization"] = authStore.getJWT ? jwt : "Bearer " + env.app.API_TOKEN!;
+  return new GraphQLClient(url, x);
 };
 
 async function Query<T>(q: string, vars?: any): Promise<T | false> {
@@ -63,6 +62,7 @@ export async function getCursos() {
   `;
 
   const data = await Query<CursosResponse>(query);
+  console.log(data);
   return data;
 }
 
