@@ -7,15 +7,14 @@
         <!-- h-96 sm:h-80  w-96 sm:w-64 -->
 
         <div class="avatar" v-if="e.p">
-          <div class="w-full rounded-full bg-neutral-focus text-neutral-content min-w-[120px]">
-            <img :src="getImg(e.name, e.surname) || ''" class="object-contain" alt="">
+          <div class="w-[200px] rounded-full">
+            <img :src="getImg(e.name, e.surname) || ''" class="aspect-square object-top " alt="">
           </div>
         </div>
 
         <div class="avatar placeholder" v-else>
           <div class="bg-neutral-focus text-neutral-content rounded-full w-24">
             <span class="text-3xl uppercase">{{ e.name[0] }}{{ e.surname[0] }}</span>
-
           </div>
         </div>
 
@@ -48,8 +47,8 @@ const empleados = [
   u("bautista", "de suto nagy", "Producción", true),
   u("cristian", "pavia", "Producción", true),
   u("maximo", "quintana", "Recursos Humanos", true),
-  u("fransisco", "vega", "Finanzas", false),
-  u("abigail", "frias", "Marketing", false),
+  u("fransisco", "vega", "Finanzas", true),
+  u("abigail", "frias", "Marketing", true),
 
 ].sort(function (a, b) {
   if (a.name < b.name) {

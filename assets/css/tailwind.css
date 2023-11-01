@@ -19,6 +19,9 @@
   p {
     @apply text-gray-700;
   }
+  li {
+    @apply text-main list-disc
+  }
 }
 
 @layer components {

@@ -1,19 +1,17 @@
 {
-  "name": "nuxt-app",
+  "name": "studypath-web",
   "private": true,
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
-    "dev:host": "nuxt dev --host 0.0.0.0",
+    "dev:host": "nuxt dev --host",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare",
-    "typecheck": "nuxi typecheck"
+    "postinstall": "nuxt prepare"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
     "@nuxthq/ui": "^2.7.0",
-    "@nuxtjs/pwa": "^3.3.5",
     "@nuxtjs/tailwindcss": "^6.8.0",
     "@types/graphql": "^14.5.0",
     "daisyui": "^3.6.5",
@@ -24,6 +22,16 @@
   },
   "dependencies": {
     "@heroicons/vue": "^2.0.18",
-    "graphql-request": "^6.1.0"
+    "@nuxt/content": "^2.8.2",
+    "@nuxtjs/cloudinary": "^2.3.4",
+    "@pinia/nuxt": "^0.4.11",
+    "@types/node": "^20.8.2",
+    "graphql-request": "^6.1.0",
+    "markdown-it": "^13.0.1",
+    "pinia": "^2.1.6",
+    "vite-svg-loader": "^4.0.0"
+  },
+  "overrides": {
+    "vue": "latest"
   }
 }
